@@ -1,0 +1,48 @@
+<!doctype HTML>
+<html>
+<head>
+
+    <link href="css/applane_beta.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/angular-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-addition-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libraries-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+    <script type="text/javascript" src="js/lib/angular1.2.16.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-sanitize.js"></script>
+    <script src="js/lib/angular-strap.js"></script>
+    <script src="js/lib/angular-strap.tpl.js"></script>
+
+    <script src="js/applane-core.js"></script>
+
+
+    <script type="text/javascript" src="js/pl-toolbar.js"></script>
+    <script type="text/javascript" src="js/pl-grid.js"></script>
+    <script type="text/javascript" src="js/pl-form.js"></script>
+    <script type="text/javascript" src="js/pl-components.js"></script>
+
+    <script type="text/javascript">
+        pl.controller('SelectCtrl', function ($scope) {
+            $scope.selectedIcons = [];
+            $scope.col = {label:"Role", field:"roleid", visibilityGrid:true, visibilityForm:true, ui:"autocomplete", style:{ width:"200px", "min-height":"24px"}, displayField:"label"};
+            $scope.icons = [
+                {"_id":"1", "label":"applane1"},
+                {"_id":"2", "label":"applane2"},
+                {"_id":"3", "label":"applane3"},
+                {"_id":"4", "label":"applane4"}
+            ];
+        });
+    </script>
+
+</head>
+<body ng-app="pl" ng-controller="SelectCtrl" style="margin: 10px;">
+<!--<pl-multiple-type-ahead></pl-multiple-type-ahead>-->
+<input type="text" data-multiple="true" ng-model='selectedIcons' ng-options='icon as icon.label for icon in icons'
+       bs-typeahead/>
+{{selectedIcons}}
+</body>
+</html>

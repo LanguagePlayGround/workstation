@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=10">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="icon" href="images/Applane-logo.png">
+<title>Applane CRM</title>
+<!-- CSS -->
+<link rel="stylesheet" href="css/bootstrap-3.css">
+<link rel="stylesheet" href="css/applane-style.css">
+</head>
+<body>
+<div id="applanecrm">
+  <div id="sidecar">
+    <div style="display: block;" id="header">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="nav-collapse">
+            <div class="module-list">
+              <ul class="nav megamenu">
+                <li class="dropdown">
+                  <div title="Applane" class="btn-group home"> <a class="cube btn btn-invisible btn-link" href="#"><img src="images/Applane-logo.png" alt="ApplaneCRM"></a> </div>
+                </li>
+                <li class="dropdown">
+                  <div class="btn-group"><a class="btn btn-invisible btn-link" href="#">People</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                    <div class="magamenu-nav-bg">&nbsp;</div>
+                    <div class="dropdown-menu scroll">
+                      <ul role="menu">
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">People</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Attendance</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Salaries</a> </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="dropdown">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#Contacts">Sales</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                    <div class="magamenu-nav-bg">&nbsp;</div>
+                    <div class="dropdown-menu scroll">
+                      <ul>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Campaign</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Leads</a> </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="dropdown">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Delivery</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                    <div class="magamenu-nav-bg">&nbsp;</div>
+                    <div class="dropdown-menu scroll">
+                      <ul>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Customers</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Order</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Deliveries</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Invoice</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Receipts</a> </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="dropdown">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Purchase</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                    <div class="magamenu-nav-bg">&nbsp;</div>
+                    <div class="dropdown-menu scroll">
+                      <ul>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Vendors</a></li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Invoices</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Payment</a> </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="dropdown">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Accounts</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                    <div class="magamenu-nav-bg">&nbsp;</div>
+                    <div class="dropdown-menu scroll">
+                      <ul>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">COA</a></li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Accounts</a> </li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Vouchers</a> </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="dropdown">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Tasks</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                    <div class="magamenu-nav-bg">&nbsp;</div>
+                    <div class="dropdown-menu scroll">
+                      <ul>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Goals</a></li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Tasks</a></li>
+                        <li><a class="ellipsis_inline" tabindex="-1" href="#">Progress</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Meetings</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Calls</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Documents</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Bugs</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Cases</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Knowledge Base</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Emails</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Revenue Line Items</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Contracts</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Quoted Line Items</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown hidden">
+                  <div class="btn-group"> <a class="btn btn-invisible btn-link" href="#">Activity Logs</a>
+                    <button type="button" title="More" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle"><i class="icon-caret-down"></i></button>
+                  </div>
+                </li>
+                <li class="dropdown more">
+                  <div class="btn-group">
+                    <button type="button" data-toggle="dropdown" class="btn btn-invisible dropdown-toggle" title="More"><i class="icon-chevron-down"></i></button>
+                    <div class="dropdown-menu scroll">
+                      <ul>
+                        <li class="dropdown hidden">
+                          <div class="home btn-group" title="Dashboard"> <a class="cube module-list-link" href="#"><img src="images/Applane-logo" alt="ApplaneCRM"></a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Accounts" title="Accounts">Ac</span>Accounts</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Contacts" title="Contacts">Co</span>Contacts</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Leads" title="Leads">Le</span>Leads</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Opportunities" title="Opportunities">Op</span>Opportunities</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Quotes" title="Quotes">Qu</span>Quotes</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Forecasts" title="Forecasts">Fo</span>Forecasts</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Reports" title="Reports">Re</span>Reports</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Calendar" title="Calendar">Ca</span>Calendar</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Tasks" title="Tasks">Ts</span>Tasks</a> </div>
+                        </li>
+                        <li class="dropdown hidden">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Notes" title="Notes">Nt</span>Notes</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Meetings" title="Meetings">Me</span>Meetings</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Calls" title="Calls">Cl</span>Calls</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Documents" title="Documents">Do</span>Documents</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Bugs" title="Bugs">Bu</span>Bugs</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Cases" title="Cases">Cs</span>Cases</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-KBDocuments" title="Knowledge Base">KB</span>Knowledge Base</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Emails" title="Emails">Em</span>Emails</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-RevenueLineItems" title="Revenue Line Items">RL</span>Revenue Line Items</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Contracts" title="Contracts">Co</span>Contracts</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-Products" title="Quoted Line Items">QL</span>Quoted Line Items</a> </div>
+                        </li>
+                        <li class="dropdown">
+                          <div> <a class="module-list-link" href="#"><span class="label label-module label-module-mini label-ActivityLogs" title="Activity Logs">Al</span>Activity Logs</a> </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div id="searchForm">
+              <form class="navbar-search">
+                <input class="search-query" placeholder="Search" type="text">
+                <div class="advanced">
+                  <div class="btn-toolbar pull-right">
+                    <div class="btn-group"> <a class="btn btn-link btn-invisible advanced dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-caret-down"></i></a>
+                      <div class="dropdown-menu pull-right scroll-child">
+                        <div class="globalsearch-adv-wrap">
+                          <ul tabindex="-1" class="globalsearch-adv reset-width">
+                            <li>
+                              <label class="active">
+                                <input checked="checked" type="checkbox">
+                                Search all</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Contacts</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Accounts</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Opportunities</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Cases</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Notes</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Calls</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Meetings</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Leads</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Quoted Line Items</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Revenue Line Items</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Product Categories</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Manufacturers</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Bugs</label>
+                            </li>
+                            <li>
+                              <label>
+                                <input type="checkbox">
+                                Documents</label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <a class="btn btn-inverse" href="#"><i class="icon icon-search"></i></a> </div>
+                  </div>
+                </div>
+              </form>
+              <div class="typeahead-wrapper">
+                <ul class="typeahead dropdown-menu">
+                </ul>
+              </div>
+            </div>
+            <div>
+              <ul class="nav megamenu">
+                <li class="dropdown notification-list">
+                  <div class="btn-group">
+                    <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" rel="tooltip" title=""> 0 </button>
+                    <div class="dropdown-menu scroll pull-right">
+                      <ul>
+                        <li><a class="row-fluid" href="#"><i class="icon-reorder span1"></i><span title="" data-original-title="" class="span8 ellipsis_inline">View Notifications</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="nav megamenu" id="userList">
+                <li tabindex="-1" class="dropdown" id="userActions">
+                  <div class="btn-group"> <a id="userTab" data-toggle="dropdown" href="#" role="button" class="btn btn-invisible btn-link dropdown-toggle" rel="tooltip" title="" > <img src="images/profile-icon.png" alt="jim" class="avatar avatar-btn"> <i class="icon-caret-down"></i> </a>
+                    <div class="dropdown-menu scroll pull-right">
+                      <ul id="fullmenu">
+                        <li class="profileactions-profile"><a href="#"><img src="images/profile-icon.png" alt="jim" class="avatar avatar-sm">Profile</a> </li>
+                        <li class="profileactions-employees"><a href="#"> <i class="icon-group"></i>Employees</a> </li>
+                        <li class="administration"><a href="#"> <i class="icon-cogs"></i>Admin</a> </li>
+                        <li class="profileactions-about"><a href="#"> <i class="icon-info-sign"></i>About</a> </li>
+                        <li class="profileactions-logout"><a href="#"> <i class="icon-signout"></i>Log Out</a> </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="nav megamenu">
+                <li class="dropdown" id="createList">
+                  <div class="btn-group"> <a data-toggle="dropdown" href="#" class="btn btn-invisible btn-link dropdown-toggle" rel="tooltip" title=""><i class="icon-plus icon-md"></i></a>
+                    <div class="dropdown-menu scroll pull-right">
+                      <ul>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-plus"></i>Create Account</a></span></li>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-plus"></i>Create Contact</a></span></li>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-plus"></i>Create Opportunity</a></span></li>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-plus"></i>Create Lead</a></span></li>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-plus"></i>Create Document</a></span></li>
+                        <li><span class="quickcreate"><a data-action="email" href="#"><i class="icon-plus"></i>Compose Email</a></span></li>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-phone"></i>Log Call</a></span></li>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-calendar"></i>Schedule Meeting</a></span></li>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-plus"></i>Create Task</a></span></li>
+                        <li><span class="quickcreate"> <a class="actionLink" href="#"><i class="icon-plus"></i>Create Note or Attachment</a></span></li>
+                        <li><span class="quickcreate"><a class="actionLink" href="#"><i class="icon-plus"></i>Create Revenue Line Item</a></span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: block;" id="content">
+      <div>
+        <div class="row-fluid">
+          <div class="main-pane span8">
+            <div>
+              <div>
+                <div class="headerpane">
+                  <h1> <span class="record-cell"> <span class="detail">
+                    <div class="dropdown"> <a class="dropdown-toggle btn btn-invisible btn-link" data-toggle="dropdown" href="#">Group <i class="icon-caret-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><span><a href="#" class="rowaction">Backlog</a></span></li>
+                        <li><span><a href="#" class="rowaction">Week Task</a></span></li>
+                        <li><span><a href="#" class="rowaction">Today Task</a></span></li>
+                        <li><span><a href="#" class="rowaction">Team Task</a></span></li>
+                      </ul>
+                    </div>
+                    </span></span>
+                    <div class="btn-toolbar pull-right dropdown"><span class="list-headerpane"><a class="btn btn-blue" href="#"> Create</a></span><span tabindex="-1" class="list-headerpane">
+                      <button class="btn btn-invisible sidebar-toggle" rel="tooltip" title=""><i class="icon-double-angle-right"></i></button>
+                      </span></div>
+                  </h1>
+                </div>
+              </div>
+              <div>
+                <div class="search-filter">
+                  <div class="control-group">
+					<div class="btn-group add-new-row"><div class="btn"> <a href="#" title="Add new row" onclick="return false;" class="dropdown-toggle" tabindex="-1"> <i class="icon-plus"></i> </a> </div></div>
+                    <div class="filter controls controls-two">
+                      <div class="filter-view search">
+                      	
+                        <div class="btn-group">
+                          <div class="btn list"> <a data-toggle="dropdown" href="#" rel="tooltip" class="dropdown-toggle" tabindex="-1"> Filter <i class="icon-caret-down"></i> </a>
+                            <ul class="dropdown-menu scroll">
+                              <li><span tabindex="-1" class="list"><a href="#"> Filter</a></span></li>
+                              <li><span tabindex="-1" class="list"><a href="#"> Sort</a></span></li>
+                              <li><span tabindex="-1" class="list"><a href="#"> Group</a></span></li>
+                            </ul>
+                          </div>
+                          <span class="btn list"> <a href="#" data-toggle="dropdown" rel="tooltip" class="dropdown-toggle"> <i class="icon-plus"></i> </a>
+                          <ul class="dropdown-menu scroll">
+                            <li> <span class="check-btn">
+                              <input name="" type="checkbox" value="">
+                              <label>Name</label>
+                              </span> </li>
+                            <li> <span class="check-btn">
+                              <input name="" type="checkbox" value="">
+                              <label>City</label>
+                              </span> </li>
+                            <li> <span class="check-btn">
+                              <input name="" type="checkbox" value="">
+                              <label>Billing Country</label>
+                              </span> </li>
+                            <li> <span class="check-btn">
+                              <input name="" type="checkbox" value="">
+                              <label>Phone</label>
+                              </span> </li>
+                            <li> <span class="check-btn">
+                              <input name="" type="checkbox" value="">
+                              <label>User</label>
+                              </span> </li>
+                            <li> <span class="check-btn">
+                              <input name="" type="checkbox" value="">
+                              <label>Email Address</label>
+                              </span> </li>
+                            <li> <span class="check-btn">
+                              <input name="" type="checkbox" value="">
+                              <label>Date Created</label>
+                              </span> </li>
+                          </ul>
+                          </span> </div>
+                        <div class="filter-search-result btn-group">
+                          <input placeholder="Search by name..." class="search-name" type="text">
+                          <div class="btn"> <a href="#" data-toggle="dropdown" rel="tooltip" class="dropdown-toggle" tabindex="-1"> <i class="icon icon-caret-down"></i></a>
+                            <ul class="dropdown-menu left">
+                              <li><span tabindex="-1" class="list"><a href="#" name="edit_button"> High</a></span></li>
+                              <li><span tabindex="-1" class="list"><a href="#" name="addtolist_button"> Low</a></span></li>
+                              <li><span tabindex="-1" class="list"><a href="#" name="merge_button"> Blocker</a></span></li>
+                            </ul>
+                          </div>
+                          <div class="btn"> <a href="#" onclick="return false;" class="dropdown-toggle" tabindex="-1"> <i class="icon-remove"></i> </a> </div>
+                        </div>
+                        <div class="filter-search-result btn-group">
+                          <input placeholder="Search by name..." class="search-name" type="text">
+                          <div class="btn"> <a href="#" data-toggle="dropdown" rel="tooltip" class="dropdown-toggle" tabindex="-1"><i class="icon icon-caret-down"></i></a>
+                            <ul class="dropdown-menu left">
+                              <li><span tabindex="-1" class="list"><a href="#" name="edit_button"> High</a></span></li>
+                              <li><span tabindex="-1" class="list"><a href="#" name="addtolist_button"> Low</a></span></li>
+                              <li><span tabindex="-1" class="list"><a href="#" name="merge_button"> Blocker</a></span></li>
+                            </ul>
+                          </div>
+                          <div class="btn"> <a href="#" onclick="return false;" class="dropdown-toggle" tabindex="-1"> <i class="icon-remove"></i> </a> </div>
+                        </div>
+                        <div class="btn-group"><div class="btn"> <a href="#" onclick="return false;" class="dropdown-toggle" tabindex="-1"> <i class="icon-ok"></i> </a> </div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-options extend hide">
+                    <div class="filter-header">
+                      <div class="row-fluid">
+                        <div class="controls span6">
+                          <input class="inherit-width" placeholder="Enter new filter name…" type="text">
+                        </div>
+                        <div class="span6">
+                          <div class="pull-right"> <a tabindex="-1" class="btn btn-link btn-invisible reset_button">Reset</a> <a tabindex="-1" class="btn btn-link btn-invisible filter-close">Cancel</a> <a class="btn btn-link btn-invisible delete_button hide">Delete</a> <a class="btn btn-primary disabled save_button">Save</a> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <div class="pagination">
+                    <div class="flex-list-view left-actions right-actions">
+                      <div class="flex-list-view-content">
+                        <table class="table table-striped dataTable reorderable-columns expandable-table">
+                          <thead>
+                            <tr>
+                              <th>
+                                <span class="list">
+                                <div class="btn-group">
+                                  <div tabindex="-1" class="btn checkall">
+                                    <input name="check" class="toggle-all" type="checkbox">
+                                  </div>
+                                  <span class="list"><a class="btn dropdown-toggle disabled" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                  <ul class="dropdown-menu">
+                                    <li><span tabindex="-1" class="list"><a href="#" name="edit_button"> Mass Update</a></span></li>
+                                    <li><span tabindex="-1" class="list"><a href="#" name="addtolist_button"> Add To Target List</a></span></li>
+                                    <li><span tabindex="-1" class="list"><a href="#" name="merge_button"> Merge</a></span></li>
+                                    <li><span tabindex="-1" class="list"><a href="#" name="delete_button"> Delete</a></span></li>
+                                    <li><span tabindex="-1" class="list"><a href="#" name="export_button"> Export</a></span></li>
+                                  </ul></span>
+                                  <span class="list expand"> <a class="btn" href="#" rel="tooltip" title="Expand all"><span class="icon-plus"></span></a></span>
+                                </div>
+                                </span></th>
+                              <th tabindex="-1" class="sorting orderByname" data-fieldname="name" data-orderby=""> <div>
+                                  <div class="th-droppable-placeholder ui-droppable" data-droppableindex="0"></div>
+                                  <div class="ui-draggable" style="position: relative;" data-draggable="true"> <span> Name </span> </div>
+                                </div>
+                              </th>
+                              <th tabindex="-1" class="sorting orderBybilling_address_city" data-fieldname="billing_address_city" data-orderby=""> <div>
+                                  <div class="th-droppable-placeholder ui-droppable" data-droppableindex="1"></div>
+                                  <div class="ui-draggable" style="position: relative;" data-draggable="true"> <span> Backlog </span> </div>
+                                </div>
+                              </th>
+                              <th tabindex="-1" class="sorting orderBybilling_address_country" data-fieldname="billing_address_country" data-orderby=""> <div>
+                                  <div class="th-droppable-placeholder ui-droppable" data-droppableindex="2"></div>
+                                  <div class="ui-draggable" style="position: relative;" data-draggable="true"> <span> Plan </span> </div>
+                                </div>
+                              </th>
+                              <th tabindex="-1" class="sorting orderByphone_office" data-fieldname="phone_office" data-orderby=""> <div>
+                                  <div class="th-droppable-placeholder ui-droppable" data-droppableindex="3"></div>
+                                  <div class="ui-draggable" style="position: relative;" data-draggable="true"> <span> Progress </span> </div>
+                                </div>
+                              </th>
+                              <th class="nosort morecol"> <div class="dropdown">
+                                  <button class="btn btn-invisible" data-toggle="dropdown" rel="tooltip" title=""><i class="icon-ellipsis-horizontal"></i></button>
+                                  <ul class="dropdown-menu left">
+                                    <li>
+                                      <button class="active"><i class="icon icon-ok"></i> Name </button>
+                                    </li>
+                                    <li>
+                                      <button class="active"><i class="icon icon-ok"></i> City </button>
+                                    </li>
+                                    <li>
+                                      <button class="active"><i class="icon icon-ok"></i> Billing Country </button>
+                                    </li>
+                                    <li>
+                                      <button class="active"><i class="icon icon-ok"></i> Phone </button>
+                                    </li>
+                                    <li>
+                                      <button class="active"><i class="icon icon-ok"></i> User </button>
+                                    </li>
+                                    <li>
+                                      <button class="active"><i class="icon icon-ok"></i> Email Address </button>
+                                    </li>
+                                    <li>
+                                      <button class="active"><i class="icon icon-ok"></i> Date Created </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="single">
+                              <td><div class="cell-index"></div><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Detail</a></li>
+                                  <li><a href="#">Progress</a></li>
+                                </ul>
+                                </span> 
+                                <span class="list expand"> <a class="btn" href="#" rel="tooltip" title="Expand"><span class="icon-plus"></span></a></span>
+                                </span></span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> <a href="#">Sachin Garg</a> </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> 1000/100 </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> 2000 hr/100 </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> 1800 hr </div>
+                                </span></td>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr class="single">
+                              <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Detail</a></li>
+                                  <li><a href="#">Progress</a></li>
+                                </ul>
+                                </span> 
+                                <span class="list collapse"> <a class="btn" href="#" rel="tooltip" title="Collapse"><span class="icon-minus"></span></a></span>
+                                </span></span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> <a href="#">Parvin</a> </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr class="single">
+                              <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Detail</a></li>
+                                  <li><a href="#">Progress</a></li>
+                                </ul>
+                                </span> 
+                                <span class="list collapse"> <a class="btn" href="#" rel="tooltip" title="Collapse"><span class="icon-minus"></span></a></span>
+                                </span></span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> <a href="#">Nitin</a> </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr class="single level-1">
+                                              <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                                <input name="check" type="checkbox">
+                                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                                <ul class="dropdown-menu">
+                                                  <li><a href="#">Detail</a></li>
+                                                  <li><a href="#">Progress</a></li>
+                                                </ul>
+                                                </span> 
+                                                <span class="list expand"> <a class="btn" href="#" rel="tooltip" title="Expand"><span class="icon-plus"></span></a></span>
+                                                </span></span></td>
+                                              <td><span class="list">
+                                                <div class="ellipsis_inline" title=""> <a href="#">Nitin</a> </div>
+                                                </span></td>
+                                              <td><span class="list">
+                                                <div class="ellipsis_inline" title=""> 10hr </div>
+                                                </span></td>
+                                              <td><span class="list">
+                                                <div class="ellipsis_inline" title=""> 20hr </div>
+                                                </span></td>
+                                              <td><span class="list">
+                                                <div class="ellipsis_inline" title=""> 18hr </div>
+                                                </span></td>
+                                              <td>&nbsp;</td>
+                                            </tr>
+                                            <tr class="single level-1">
+                                              <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                                <input name="check" type="checkbox">
+                                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                                <ul class="dropdown-menu">
+                                                  <li><a href="#">Detail</a></li>
+                                                  <li><a href="#">Progress</a></li>
+                                                </ul>
+                                                </span> 
+                                                <span class="list collapse"> <a class="btn" href="#" rel="tooltip" title="Collapse"><span class="icon-minus"></span></a></span>
+                                                </span></span></td>
+                                              <td><span class="list">
+                                                <div class="ellipsis_inline" title=""> <a href="#">Dipender</a> </div>
+                                                </span></td>
+                                              <td><span class="list">
+                                                <div class="ellipsis_inline" title=""> 10hr </div>
+                                                </span></td>
+                                              <td><span class="list">
+                                                <div class="ellipsis_inline" title=""> 20hr </div>
+                                                </span></td>
+                                              <td><span class="list">
+                                                <div class="ellipsis_inline" title=""> 18hr </div>
+                                                </span></td>
+                                              <td>&nbsp;</td>
+                                            </tr>
+                            <tr class="single">
+                              <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Detail</a></li>
+                                  <li><a href="#">Progress</a></li>
+                                </ul>
+                                </span> 
+                                <span class="list expand"> <a class="btn" href="#" rel="tooltip" title="Expand"><span class="icon-plus"></span></a></span>
+                                </span></span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> <a href="#">Ashish</a> </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td>&nbsp;</td>
+                            </tr>
+                            <tr class="single">
+                              <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Detail</a></li>
+                                  <li><a href="#">Progress</a></li>
+                                </ul>
+                                </span> 
+                                <span class="list expand"> <a class="btn" href="#" rel="tooltip" title="Expand"><span class="icon-plus"></span></a></span>
+                                </span></span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> <a href="#">Rajat</a> </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td><span class="list">
+                                <div class="ellipsis_inline" title=""> &nbsp; </div>
+                                </span></td>
+                              <td>&nbsp;</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div>
+                      <button class="btn btn-link btn-invisible more padded">More accounts...</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="visibility: visible;" class="side sidebar-content span4">
+            <div class="side-pane active">
+              <div>
+                <div></div>
+              </div>
+            </div>
+            <div class="dashboard-pane">
+              <div>
+                <div class="row-fluid">
+                  <div class="dashboard">
+                    <div class="cols row-fluid">
+                      <div class="preview-headerbar">
+                        <div class="headerpane">
+                          <h1> <span class="record-cell">
+                            <div class="dropdown"> <a class="dropdown-toggle btn btn-invisible btn-link" rel="tooltip" data-toggle="dropdown" href="#">Add <i class="icon-caret-down"></i></a>
+                              <ul class="dropdown-menu">
+                                <li><span><a class="rowaction" href="#">Edit</a></span></li>
+                                <li><span><a class="rowaction" href="#">Progress</a></span></li>
+                              </ul>
+                            </div>
+                            </span>
+                            <div class="btn-toolbar"> <span class="actions detail"> <a class="btn dropdown-toggle" href="#" title=""> Cancel </a> <span class="detail"> <a class="rowaction btn-blue btn" href="#" name="add_button">Save</a> </span> </span></div>
+                          </h1>
+                        </div>
+                      </div>
+                      <ul class="dashlets row-fluid">
+                        <li class="span12">
+                          <ul class="dashlet-row ui-sortable ui-sortable-disabled">
+                            <li class="row-fluid sortable">
+                              <div class="rows well well-invisible">
+                                <ul class="dashlet-cell rows row-fluid">
+                                  <li class="dashlet-container span12 ui-droppable">
+                                    <div>
+                                      <div class="thumbnail dashlet ui-draggable" data-type="dashlet" data-action="droppable">
+                                        <div data-dashlet="dashlet" class="dashlet-content">
+                                          <div> <span class="detail">
+                                            <div class="form-wrapper">
+                                              <form action="/hello" method="get">
+                                                <div class="field">
+                                                  <label>Task</label>
+                                                  <input name="" type="text" placeholder="Task">
+                                                </div>
+                                                <div class="field">
+                                                  <label>Note</label>
+                                                  <input name="" type="text" placeholder="Note">
+                                                </div>
+                                                <div class="fields">
+                                                  <label>Priority</label>
+                                                  <select>
+                                                    <option value="#" selected>Low</option>
+                                                    <option value="#">Medium</option>
+                                                    <option value="#">High</option>
+                                                    <option value="#">Critical</option>
+                                                  </select>
+                                                </div>
+                                                <div class="fields">
+                                                  <label>Function</label>
+                                                  <input name="" type="text" placeholder="Function">
+                                                </div>
+                                                <div class="fields">
+                                                  <label>Assign to</label>
+                                                  <input name="" type="text" placeholder="Assign to">
+                                                </div>
+                                                <div class="fields">
+                                                  <label>Status</label>
+                                                  <select name="">
+                                                    <option value="#">In Progress</option>
+                                                    <option value="#">Completed</option>
+                                                    <option value="#">Pending</option>
+                                                    <option value="#">On Hold</option>
+                                                  </select>
+                                                </div>
+                                                <div class="three-fields">
+                                                  <label>Plan</label>
+                                                  <input name="" type="text" placeholder="Plan">
+                                                </div>
+                                                <div class="three-fields">
+                                                  <label>Started on</label>
+                                                  <input name="" type="date" placeholder="dd/mm/yyyy">
+                                                </div>
+                                                <div class="three-fields">
+                                                  <label>Due on</label>
+                                                  <input name="" type="date" placeholder="dd/mm/yyyy">
+                                                </div>
+                                                <div class="fields">
+                                                  <label>Duration</label>
+                                                  <input name="" class="input-half" type="number" placeholder="Number">
+                                                  <select name="" class="select-half">
+                                                    <option value="#">Month</option>
+                                                    <option value="#">Week</option>
+                                                    <option value="#">Day</option>
+                                                    <option value="#">Hours</option>
+                                                    <option value="#">Minutes</option>
+                                                  </select>
+                                                </div>
+                                                <div class="fields">
+                                                  <label>Files</label>
+                                                  <input name="" type="file" placeholder="Attachment">
+                                                </div>
+                                                <div class="field">
+                                                  <label>Billing Address</label>
+                                                  <span class="fieldset">
+                                                  <input name="" type="text" placeholder="Billing Street">
+                                                  <input name="" type="text" placeholder="Billing City">
+                                                  <input name="" type="text" placeholder="Billing State">
+                                                  <input name="" type="text" placeholder="Billing Postal Code">
+                                                  <input name="" type="text" placeholder="Billing Country">
+                                                  </span> </div>
+                                                <div class="clearfix"></div>
+                                              </form>
+                                              <div class="clearfix"></div>
+                                            </div>
+                                            <div class="filtered tabbable tabs-left">
+                                                <ul class="nav results">
+                                                    <li class="subpanel clearfix closed empty">
+                                                        <div class="subpanel-header" tabindex="-1">
+                                                            <div class="label label-module label-Calls pull-left">Cl</div> 
+                                                            <h4 class="pull-left">Calls</h4>
+                                                            <div class="subpanel-controls btn-toolbar pull-right">
+                                                                <span class="panel-top">
+                                                                    <a name="" title="" rel="tooltip" href="javascript:void(0);" class="btn btn-invisible">
+                                                                        <i class="icon-chevron-up"></i>
+                                                                    </a>
+                                                                </span>
+                                                                <span class="actions btn-group pull-right panel-top">
+                                                                    <span class="small">
+                                                                        <a title="" rel="tooltip" href="javascript:void(0);" class="rowaction btn">
+                                                                            <i class="icon-plus"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                    <a title="" rel="tooltip" href="javascript:void(0);" data-toggle="dropdown" class="btn dropdown-toggle">
+                                                                        <i class="icon-caret-down"></i>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><span>&nbsp;</span></li>
+                                                                    </ul>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="filtered tabbable tabs-left"> 
+                                                  <ul class="nav results">
+                                                    <li class="subpanel clearfix">
+                                                      <div class="subpanel-header" tabindex="-1">
+                                                        <div class="label label-module label-Tasks pull-left">Ts</div>
+                                                        <h4 class="pull-left">Tasks</h4>
+                                                        <div class="subpanel-controls btn-toolbar pull-right"> 
+                                                        	<span class="panel-top">
+                                                            	<a rel="tooltip" href="javascript:void(0);" class="btn btn-invisible">
+                                                            		<i class="icon-chevron-up"></i> 
+                                                                </a>
+                                                         	</span>
+                                                            <span class="actions btn-group pull-right panel-top"><span class="small"> 
+                                                            	<a name="create_button" title="" rel="tooltip" href="javascript:void(0);" class="rowaction btn"><i class="icon-plus"></i></a> </span>
+                                                                <a title="" rel="tooltip" href="javascript:void(0);" data-toggle="dropdown" class="btn dropdown-toggle" ><span class="icon-caret-down"></span></a>
+                                                          <ul class="dropdown-menu">
+                                                            <li><span>Link Existing Record</span></li>
+                                                          </ul>
+                                                          </span> </div>
+                                                      </div>
+                                                      <div class="flex-list-view left-actions right-actions" style="">
+                                                        <div class="flex-list-view-content">
+                                                          <table class="table table-striped dataTable">
+                                                            <thead>
+                                                              <tr>
+                                                                <th><span><span class="list"><span class="list">
+                                <div class="btn-group">
+                                  <div tabindex="-1" class="btn checkall">
+                                    <input name="check" class="toggle-all" type="checkbox">
+                                  </div>
+                                  <span class="list"><a class="btn dropdown-toggle disabled" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                  <ul class="dropdown-menu">
+                                    <li><span tabindex="-1" class="list"><a href="#" name="edit_button"> </a></span></li>
+                                    <li><span tabindex="-1" class="list"><a href="#" name="addtolist_button"> </a></span></li>
+                                  </ul></span>
+                                </div>
+                                </span></span> </span></th>
+                                                         <th class="sorting orderByname" tabindex="-1"> <span> Progress </span> </th>
+                                                         <th class="sorting orderBystatus" tabindex="-1"> <span> When </span> </th>
+                                                         <th class="sorting orderBycontact_name" tabindex="-1"> <span> Time </span> </th>
+                                                         <th class="sorting orderBydate_start" tabindex="-1"> <span> Task </span> </th>
+                                                     <tr>
+                                                         <th colspan="5" class="alert alert-warning hide" data-target="alert-container"> <div data-target="alert"> </div></th>
+                                                              </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                              <tr class="single">
+                                                                <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Unlink</a></li>
+                                </ul>
+                                </span> </span></span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Review Meeting Notes</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> Not Started </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Ms. Judy Mera</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> </div>
+                                                                  </span></td>
+                                                              </tr>
+                                                              <tr class="single">
+                                                                <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Unlink</a></li>
+                                </ul>
+                                </span> </span></span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Arrange reference call</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> Completed </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Ms. Judy Mera</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> </div>
+                                                                  </span></td>
+                                                              </tr>
+                                                              <tr class="single">
+                                                                <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Unlink</a></li>
+                                </ul>
+                                </span> </span></span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Get demo feedback</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> Pending Input </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Jannie Cullins</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> </div>
+                                                                  </span></td>
+                                                              </tr>
+                                                              <tr class="single">
+                                                                <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Unlink</a></li>
+                                </ul>
+                                </span> </span></span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Send a letter</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> Not Started </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Parker Ehlers</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> </div>
+                                                                  </span></td>
+                                                              </tr>
+                                                              <tr class="single">
+                                                                <td><span class="list"><span class="list btn-group"> <span class="btn">
+                                <input name="check" type="checkbox">
+                                </span> <span class="list"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" rel="tooltip" title=""><span class="icon-caret-down"></span></a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Edit</a></li>
+                                  <li><a href="#">Unlink</a></li>
+                                </ul>
+                                </span> </span></span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Send quote</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> Not Started </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> <a href="#">Valerie Witt</a> </div>
+                                                                  </span></td>
+                                                                <td><span class="list">
+                                                                  <div title="" class="ellipsis_inline"> </div>
+                                                                  </span></td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        </div>
+                                                      </div>
+                                                    </li>
+                                                  </ul>
+                                                </div>
+                                            <div class="filtered tabbable tabs-left">
+                                                <ul class="nav results">
+                                                    <li class="subpanel clearfix closed">
+                                                        <div class="subpanel-header" tabindex="-1">
+                                                            <div class="label label-module label-Meetings pull-left">Me</div> 
+                                                            <h4 class="pull-left">Meetings</h4>
+                                                            <div class="subpanel-controls btn-toolbar pull-right">
+                                                                <span class="panel-top">
+                                                                    <a name="" title="" rel="tooltip" href="javascript:void(0);" class="btn btn-invisible">
+                                                                        <i class="icon-chevron-up"></i>
+                                                                    </a>
+                                                                </span>
+                                                                <span class="actions btn-group pull-right panel-top">
+                                                                    <span class="small">
+                                                                        <a title="" rel="tooltip" href="javascript:void(0);" class="rowaction btn">
+                                                                            <i class="icon-plus"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                    <a title="" rel="tooltip" href="javascript:void(0);" data-toggle="dropdown" class="btn dropdown-toggle">
+                                                                        <i class="icon-caret-down"></i>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><span>&nbsp;</span></li>
+                                                                    </ul>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+											<div class="filtered tabbable tabs-left">
+                                                <ul class="nav results">
+                                                    <li class="subpanel clearfix closed">
+                                                        <div class="subpanel-header" tabindex="-1">
+                                                            <div class="label label-module label-Notes pull-left">Nt</div> 
+                                                            <h4 class="pull-left">Notes</h4>
+                                                            <div class="subpanel-controls btn-toolbar pull-right">
+                                                                <span class="panel-top">
+                                                                    <a name="" title="" rel="tooltip" href="javascript:void(0);" class="btn btn-invisible">
+                                                                        <i class="icon-chevron-up"></i>
+                                                                    </a>
+                                                                </span>
+                                                                <span class="actions btn-group pull-right panel-top">
+                                                                    <span class="small">
+                                                                        <a title="" rel="tooltip" href="javascript:void(0);" class="rowaction btn">
+                                                                            <i class="icon-plus"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                    <a title="" rel="tooltip" href="javascript:void(0);" data-toggle="dropdown" class="btn dropdown-toggle">
+                                                                        <i class="icon-caret-down"></i>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><span>&nbsp;</span></li>
+                                                                    </ul>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+											<div class="filtered tabbable tabs-left">
+                                                <ul class="nav results">
+                                                    <li class="subpanel clearfix closed">
+                                                        <div class="subpanel-header" tabindex="-1">
+                                                            <div class="label label-module label-Emails pull-left">Em</div> 
+                                                            <h4 class="pull-left">Emails</h4>
+                                                            <div class="subpanel-controls btn-toolbar pull-right">
+                                                                <span class="panel-top">
+                                                                    <a name="" title="" rel="tooltip" href="javascript:void(0);" class="btn btn-invisible">
+                                                                        <i class="icon-chevron-up"></i>
+                                                                    </a>
+                                                                </span>
+                                                                <span class="actions btn-group pull-right panel-top">
+                                                                    <span class="small">
+                                                                        <a title="" rel="tooltip" href="javascript:void(0);" class="rowaction btn">
+                                                                            <i class="icon-plus"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                    <a title="" rel="tooltip" href="javascript:void(0);" data-toggle="dropdown" class="btn dropdown-toggle">
+                                                                        <i class="icon-caret-down"></i>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><span>&nbsp;</span></li>
+                                                                    </ul>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            </span> </div><div class="clearfix"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- App Scripts --> 
+<script type="text/javascript" src="js/sidecar.js"></script> 
+<script src="js/applane_sidecar.js"></script>
+</body>
+</html>

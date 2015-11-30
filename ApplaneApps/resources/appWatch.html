@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App watch</title>
+    <script src="js/angular.js"></script>
+    <script type="text/javascript">
+        var appModule = angular.module('$appModule', []);
+    </script>
+
+
+    <script type="text/javascript">
+        var app = angular.module('applane', ['$appModule'], function ($routeProvider, $locationProvider) {
+            $locationProvider.html5Mode(true);
+        });
+
+        app.controller('AppCtrl', function ($scope, $timeout) {
+            $scope.columns = ["name", "age", "change"]
+            $scope.data = [
+//                {name:"Rohit", age:32},
+//                {name:"Pawan", age:132},
+//                {name:"Subhash", age:232},
+                {name:"Amit", age:332, change:false, $address:{city:{state:{country:{name:"india"}}}}}
+            ];
+            //apply watch as individular
+            for (var i = 0; i < $scope.data.length; i++) {
+                for (var j = 0; j < $scope.columns.length; j++) {
+                    continue;
+                    var obj = $scope.columns[j];
+                    var expToWatch = "data[" + i + "]." + obj;
+                    console.log(expToWatch)
+                    $scope.$watch(expToWatch, function (newValue, oldValue) {
+                        console.log(">>>>>New>>>>" + newValue)
+                        console.log(">>>>>Old>>>>>" + oldValue)
+                    }, true)
+
+                }
+
+            }
+
+            //apply watch as a composite
+            $scope.$watch("data", function (newValue, oldValue) {
+                console.log(">>>>>New>>>>" + JSON.stringify(newValue))
+                console.log(">>>>>Old>>>>>" + JSON.stringify(oldValue))
+                if (angular.equals(newValue, oldValue)) {
+                    return;
+                }
+//                $timeout(function () {
+//                    $scope.data[0].change = !$scope.data[0].change
+//                }, 0)
+//                $scope.data[0].change = !$scope.data[0].change;
+                $scope.data[0].$address.city.state.country.name = $scope.data[0].$address.city.state.country.name + "A";
+
+
+            }, true)
+
+
+        });
+
+
+    </script>
+</head>
+<body ng-app="applane" ng-controller="AppCtrl">
+<input type="button" value="Insert" ng-click="data.splice(0,0,{name:'',age:10})">
+<table border="1">
+    <tr>
+        <td ng-repeat="col in columns">{{col}}</td>
+        <td>Action</td>
+    </tr>
+    <tr ng-repeat="row in data">
+        <td ng-repeat="col in columns"><input type="text" ng-model="row[col]"></td>
+        <td style="cursor:pointer;" ng-click="data.splice($index,1)">Delete</td>
+    </tr>
+</table>
+{{data}}
+</body>
+</html>

@@ -1,0 +1,42 @@
+<ion-view title="Menus">
+<div class="bar bar-header bar-energized">
+        <div class="buttons">
+            <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+            </div>
+    <h1 class="title">Menus</h1>
+    <div class="buttons">
+            <button class="button">save</button>
+            </div>
+    </div>
+ <ion-content class="has-header">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+            </ion-refresher>
+
+     <ion-list show-delete="gridOptions.delete" show-reorder="false" can-swipe="false">
+         <ion-item ng-repeat="row in gridOptions.renderedRows" ng-click="getNestedMenu($index)" ng-class="{\'item-thumbnail-left\':row.entity.img}"  class="">
+                 <img ng-if="row.entity.img" ng-src="{{row.entity.img}}" />
+                    {{row.entity.task}}
+                 <ion-option-button class="button-positive" ng-click="share(row)">
+                     Delete
+                     </ion-option-button>
+                 <ion-option-button class="button-info" ng-click="edit(row)">
+                     Edit
+                     </ion-option-button>
+                 <ion-delete-button class="ion-minus-circled" ng-click="menu.splice($index, 1)">
+                     </ion-delete-button>
+                 <ion-reorder-button class="ion-navicon" on-reorder="reorderItem(row, $fromIndex, $toIndex)">
+                     </ion-reorder-button>
+             </ion-item>
+     </ion-list>
+
+        </ion-content>
+    <ion-footer-bar align-title="left" class="bar bar-energized">
+        <div class="buttons">
+                <button class="button" ng-click="gridOptions.delete=!gridOptions.delete">Delete</button>
+            </div>
+        <h1 class="title"></h1>
+        <div class="buttons" ng-click="doSomething()">
+                <button class="button" ng-click="workbenchOptions.reorderItems=!workbenchOptions.reorderItems">Reorder</button>
+            </div>
+    </ion-footer-bar>
+    </ion-view>

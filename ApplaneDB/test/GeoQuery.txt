@@ -1,0 +1,189 @@
+d9846f6da6a4e1c2faf1adb28dca15daaa4bcd1f
+
+use business_sb
+
+db.zips1.insert([{_id:"Hisar",city:"Hisar",locs:[75.7000,29.1500]},
+				{_id:"Sirsa",city:"Sirsa",locs:[75.0300,29.5400]},
+				{_id:"Hansi",city:"Hansi",locs:[75.9700,29.1000]},
+				{_id:"Karnal",city:"Karnal",locs:[76.9800,29.6900]},
+				{_id:"Bhiwani",city:"Bhiwani",locs:[76.1333,28.7833]}
+				])
+				
+db.zips1.ensureIndex({locs:"2d"});
+
+127.0.0.1:5100/rest/query?query={"$collection":"zips1","$filter":{"locs":{"$near":[ 75.7000,29.1500 ],"$maxDistance":50000}},"$limit":3}&token=d9846f6da6a4e1c2faf1adb28dca15daaa4bcd1f
+
+Use for nearest limited places for given coordinates
+
+==============================================================================================
+
+db.zips1.ensureIndex({locs:"2dsphere"});
+
+127.0.0.1:5100/rest/query?query={"$collection":"zips1","$filter":{"locs":{"$near":{"$geometry":{"type":"Point","coordinates":[ 75.7000,29.1500 ]},"$maxDistance":50000}}}}&token=cda59f9d00aec6502ccb3352318b4ab0ee7f6e4b
+
+127.0.0.1:5100/rest/query?query={"$collection":"zips1","$filter":{"locs":{"$nearSphere":{"$geometry":{"type":"Point","coordinates":[ 75.7000,29.1500 ]},"$maxDistance":50000}}}}&token=d9846f6da6a4e1c2faf1adb28dca15daaa4bcd1f
+
+
+======================================================================================
+
+geonear query
+
+db.runCommand(
+   {
+     geoNear: "zips1",
+     near: { type: "Point", coordinates: [ 75.7000,29.1500 ] },
+     spherical: true,
+     maxDistance: 50000
+   }
+)
+
+{
+        "results" : [
+                {
+                        "dis" : 0,
+                        "obj" : {
+                                "_id" : "Hisar",
+                                "city" : "Hisar",
+                                "locs" : {
+                                        "x" : 75.7,
+                                        "y" : 29.15
+                                }
+                        }
+                },
+                {
+                        "dis" : 26839.2635603275,
+                        "obj" : {
+                                "_id" : "Hansi",
+                                "city" : "Hansi",
+                                "locs" : {
+                                        "x" : 75.97,
+                                        "y" : 29.1
+                                }
+                        }
+                }
+        ],
+        "stats" : {
+                "nscanned" : 11,
+                "objectsLoaded" : 2,
+                "avgDistance" : 13419.63178016375,
+                "maxDistance" : 26839.2635603275,
+                "time" : 0
+        },
+        "ok" : 1
+}
+=======================================================================================
+
+use afb
+db.dropDatabase()
+use afb_sb
+db.dropDatabase()
+use daffodil
+db.dropDatabase()
+use daffodil_sb
+db.dropDatabase()
+use northwindtestcaseglobal
+db.dropDatabase()
+use northwindtestcases
+db.dropDatabase()
+use northwindtestcasesadmin
+db.dropDatabase()
+use pladmin
+db.dropDatabase()
+
+use northwindtestcases
+db.pl.users.insert([{
+        "_id" : ObjectId("5587c1c5ce9bc8ac1f24df85"),
+        "username" : "guest",
+        "password" : "guest",
+        "admin" : true,
+        "developer" : true,
+        "enc_password" : "84983c60f7daadc1cb8698621f802c0d9f9a3c3c295c810748fb048115c186ec",
+        "fullname" : "guest"
+}])
+use northwindtestcasesadmin
+db.pl.users.insert([{
+        "_id" : ObjectId("5587c1c1ce9bc8ac1f24df5b"),
+        "username" : "adminguest",
+        "password" : "adminpass",
+        "admin" : true,
+        "enc_password" : "713bfda78870bf9d1b261f565286f85e97ee614efe5f0faf7c34e7ca4f65baca",
+        "fullname" : "adminguest"
+},
+{
+        "_id" : ObjectId("5587c1c2ce9bc8ac1f24df5e"),
+        "username" : "guest",
+        "password" : "guest",
+        "admin" : true,
+        "developer" : true,
+        "enc_password" : "84983c60f7daadc1cb8698621f802c0d9f9a3c3c295c810748fb048115c186ec",
+        "fullname" : "guest"
+}])
+use northwindtestcaseglobal
+db.pl.users.insert([{
+        "_id" : ObjectId("5587c1c3ce9bc8ac1f24df61"),
+        "username" : "guest",
+        "password" : "guest",
+        "admin" : true,
+        "developer" : true,
+        "enc_password" : "84983c60f7daadc1cb8698621f802c0d9f9a3c3c295c810748fb048115c186ec",
+        "fullname" : "guest"
+}])
+use pladmin
+db.pl.users.insert([{
+        "username" : "admin",
+        "password" : "damin",
+        "admin" : true,
+        "developer" : true,
+        "enc_password" : "6d3ad600449950b3a6584fd9c1177d2aaff14193a71b7b003eac8f55e28ae693",
+        "fullname" : "admin"
+}])
+db.pl.dbs.insert([
+{"db":"afb", "sandboxDb":"afb_sb", "globalDb":"", "guestUserName":"admin", "globalUserName":"admin", "globalPassword":"damin", "globalUserAdmin":true, code:"1","allowedServices":[{"_id":1,"service":"/rest/invoke"}]},
+{"db":"afb_sb", "globalDb":"afb", "guestUserName":"afb", "globalUserName":"admin", "globalPassword":"admin", "globalUserAdmin":"damin", code:"3","allowedServices":[{"_id":1,"service":"/rest/invoke"}]},
+{"db":"daffodil", "sandboxDb":"daffodil_sb", "globalDb":"afb", "guestUserName":"admin", "globalUserName":"admin", "globalPassword":"damin", "globalUserAdmin":true, code:"2","allowedServices":[{"_id":1,"service":"/rest/invoke"}]},
+{"db":"daffodil_sb", "globalDb":"daffodil", "guestUserName":"admin", "globalUserName":"admin", "globalPassword":"damin", "globalUserAdmin":true, code:"4","allowedServices":[{"_id":1,"service":"/rest/invoke"}]}
+])
+use afb
+db.pl.users.insert([{
+        "username" : "admin",
+        "password" : "damin",
+        "admin" : true,
+        "developer" : true,
+        "enc_password" : "6d3ad600449950b3a6584fd9c1177d2aaff14193a71b7b003eac8f55e28ae693",
+        "fullname" : "admin"
+}])
+use afb_sb
+db.pl.users.insert([{
+        "username" : "admin",
+        "password" : "damin",
+        "admin" : true,
+        "developer" : true,
+        "enc_password" : "6d3ad600449950b3a6584fd9c1177d2aaff14193a71b7b003eac8f55e28ae693",
+        "fullname" : "admin"
+}])
+use daffodil
+db.pl.users.insert([{
+        "username" : "admin",
+        "password" : "damin",
+        "admin" : true,
+        "developer" : true,
+        "enc_password" : "6d3ad600449950b3a6584fd9c1177d2aaff14193a71b7b003eac8f55e28ae693",
+        "fullname" : "admin"
+}])
+use daffodil_sb
+db.pl.users.insert([{
+        "username" : "admin",
+        "password" : "damin",
+        "admin" : true,
+        "developer" : true,
+        "enc_password" : "6d3ad600449950b3a6584fd9c1177d2aaff14193a71b7b003eac8f55e28ae693",
+        "fullname" : "admin"
+}])
+===========================================
+
+need to set MONGO_REMOTE_URL in command line
+Merge code
+test on delopyed
+how to use script to execute testcase
+lock may be taken or not on fetch query to parent db
+Data on remote server 

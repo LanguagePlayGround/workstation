@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="mgcrea.ngStrapDocs">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Date Picker</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/lib/angular1.2.16.min.js" data-semver="1.2.13"></script>
+    <script src="js/lib/angular-animate.min.js" data-semver="1.2.13"></script>
+    <script src="js/lib/angular-sanitize.js" data-semver="1.2.13"></script>
+    <script src="js/lib/angular-strap.js" data-semver="v2.0.0-rc.4"></script>
+    <script src="angular-strap/dist/modules/datepicker.tpl.js" data-semver="v2.0.0-rc.4"></script>
+    <script src="angular-strap/dist/modules/typeahead.tpl.js"></script>
+    <script src="angular-strap/dist/modules/select.tpl.js"></script>
+    <script src='angular-strap/dist/angular-strap.tpl.js'></script>
+    <script src="test.js"></script>
+    <link href="css/05ef9f12.angular-motion.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-addition-min.css" rel="stylesheet"/>
+    <link href="css/main-min.css" rel="stylesheet"/>
+    <link href="css/libraries-min.css" rel="stylesheet"/>
+    <script>
+        var app = angular.module('mgcrea.ngStrapDocs', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap']);
+
+        app.controller('DatepickerDemoCtrl', function ($scope, $http) {
+
+            $scope.selectedIcon = '';
+            $scope.selectedIcons = ['India', 'Haryana'];
+            $scope.icons = [
+                {value:'India', label:'India'},
+                {value:'Sri Lanka', label:'Sri Lanka'},
+                {value:'America', label:'America'},
+                {value:'Canada', label:'Canada'},
+                {value:'Haryana', label:'Haryana'}
+            ];
+
+
+            $scope.selectedDate = new Date();
+            $scope.selectedDateAsNumber = Date.UTC(1986, 1, 22);
+            $scope.getType = function (key) {
+                return Object.prototype.toString.call($scope[key]);
+            };
+
+            $scope.selectedState = '';
+            $scope.states = ['India', 'Australia', 'Haryana', 'punjab' , 'Hisar'];
+
+            $scope.selectedIcon = '';
+
+
+            $scope.selectedAddress = '';
+            $scope.getAddress = function (viewValue) {
+
+                var params = {address:viewValue, sensor:false};
+                return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {params:params})
+                        .then(function (res) {
+                            return res.data.results;
+                        });
+
+            };
+            $scope.name = 'Dynamic Popup';
+            $scope.modal = {
+                "title":"Title",
+                "content":"Dynamic Popup Display"
+            };
+
+
+        });
+    </script>
+</head>
+<body>
+
+<div class="bs-docs-section" ng-controller="DatepickerDemoCtrl">
+    <span>{{selectedAddress}}</span>
+    <input type="text" class="form-control" ng-model="selectedAddress" data-animation="am-flip-x"
+           ng-options="address as address.formatted_address for address in getAddress($viewValue)"
+           placeholder="Enter address" bs-typeahead>
+</div>
+</body>
+</html>

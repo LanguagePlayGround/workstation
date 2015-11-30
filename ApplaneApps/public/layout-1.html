@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'RobotDraft', 'helvetica';
+        }
+
+        .parent {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 48px;
+            bottom: 0;
+        }
+        .parent.top-header{
+               top:0px;
+        }
+
+        .top {
+            height: 200px;
+        }
+
+        .left {
+            width: 25%;
+            height: 100%;
+            float: left;
+            /*background: rgb(1, 95, 163);*/
+            overflow: hidden;
+            overflow-y: auto;
+            box-shadow: 1px 1px 1px #cecece;
+        }
+
+        .right {
+            width: 75%;
+            height: 100%;
+            float: left;
+            /*background: #808080;*/
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        .list {
+            background: transparent;
+            padding: 0px 10px 0px 100px;
+            position: relative;
+            height: 100px;
+            margin: 20px;
+        }
+
+        .list p {
+            padding: 10px 10px 0 10px;
+            font-weight: bold;
+        }
+
+        .thumbnail {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url('images/u2.jpg');
+            height: 100px;
+            width: 100px;
+            background-size: 151px 100px;
+            background-position: -15px 0px;
+            background-repeat: no-repeat;
+            box-shadow: 1px 2px 5px #888;
+            border-radius: 0px;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #9DB3C5;
+
+        }
+        .l1 {
+            background: #FF8500;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+        .left .l1{
+            border-right: 1px solid;
+        }
+        table{
+            width: 100%;
+            border: 1px solid #cecece;
+        }
+        th, td{
+            border: 1px solid #cecece;
+        }
+        th{
+            padding: 10px;
+            text-align: center;
+        }
+        td{
+            padding: 5px 10px
+        }
+        .l2{
+            padding: 20px;
+        }
+        p{
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+<div class="parent top-header">
+    <div class="left">
+        <div>
+            <div class="l1">
+                CEO
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div>
+            <div class="l1">
+                Sales Representation Statistics
+            </div>
+        </div>
+    </div>
+</div>
+<div class="parent">
+    <div class="left">
+        <div>
+
+            <div class="list">
+                <div class="thumbnail"></div>
+                <div class="l2">
+                    <p>Yogesh Aggarwal</p>
+                    <p>CEO</p>
+                </div>
+            </div>
+            <hr/>
+            <div class="l2">
+                <p>Shortcuts</p>
+                <p>Approvals</p>
+            </div>
+            <hr/>
+            <div class="l2">
+                <p><p style="float: left;">Total Employess</p><p  style="float: right;">45000</p></p>
+                <p style="clear: both;">Recuritments</p>
+                <p>Exits</p>
+                <p>New joinings</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="flex">
+            <div>
+                <div>
+                   <table>
+                       <thead>
+                        <tr>
+                            <th>Nov</th>
+                            <th>Oct</th>
+                            <th>Sep</th>
+                            <th>YTD</th>
+                        </tr>
+                       </thead>
+                       <tbody>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+                       <tr><td>1,13,123.00</td><td>1,53,242.00</td><td>1,23,543.00</td><td>11,23,249.00</td></tr>
+
+                       </tbody>
+                   </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

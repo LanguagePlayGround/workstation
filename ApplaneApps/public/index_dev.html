@@ -1,0 +1,57 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Applane</title>
+    <script type="text/javascript" src="js/date.js"></script>
+    <script>Date.now = function() { return +new Date; };</script>           <!-- expect Date.now() with numeric timestamp but date.js return its object, so we override it manually (resuired in d3js animation) -->
+    <script>startLoadingTime = new Date();</script>
+    <link rel="icon" href="images/applane_logo.png">
+    <link rel="stylesheet" href="css/applane_combined.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--<base href="/">-->
+</head>
+
+<body ng-app="pl" ng-controller="WorkbenchCtrl">
+
+<main pl-workbench="workbenchOptions"></main>
+<section ng-view></section>
+<div class="pl-pageslide-wrapper"></div>
+<div class="_lm"><div class="app-busy-message">Loading...</div></div>
+
+</body>
+
+<!--<script type="text/javascript" src="js/lib/newrelic-browser.js"></script>-->
+<script type="text/javascript" src="js/lib/angularv1.3.0-beta.7.js"></script>
+<script src="js/lib/angular-strp.js"></script>
+<script src="js/q.js"></script>
+<script type="text/javascript" src="js/AppsViews.js"></script>
+<script type="text/javascript" src="js/lru-cache.js"></script>
+<script type="text/javascript" src="js/ApplaneDB.js"></script>
+<script type="text/javascript" src="js/Util.js"></script>
+<script type="text/javascript" src="js/DataModel.js"></script>
+<script type="text/javascript" src="js/RowDataModel.js"></script>
+<script type="text/javascript" src="js/FieldDataModel.js"></script>
+<script type="text/javascript" src="js/WorkbenchCtrl.js"></script>
+<script type="text/javascript" src="js/pl-grid.js"></script>
+<script type="text/javascript" src="js/pl-form.js"></script>
+<script type="text/javascript" src="js/pl-composite.js"></script>
+<script type="text/javascript" src="js/pl-workbench.js"></script>
+<script type="text/javascript" src="js/pl-html.js"></script>
+<script type="text/javascript" src="js/pl-graph.js"></script>
+<script type="text/javascript" src="js/pl-dashboard.js"></script>
+<script type="text/javascript" src="js/pl-view.js"></script>
+<script type="text/javascript" src="js/pl-components.js"></script>
+<script type="text/javascript" src="js/pl-user-preference.js"></script>
+<script type="text/javascript" src="js/Document.js"></script>
+<script type="text/javascript" src="js/ModuleManager.js"></script>
+<script type="text/javascript" src="js/EventManager.js"></script>
+<script type="text/javascript" src="js/ViewUtility.js"></script>
+<script type="text/javascript" src="js/DashboardDataModel.js"></script>
+<script src="js/lib/text-angular.min.js" async ></script>
+<script type="text/javascript" src="js/lib/d3.v3.js"></script>
+<script type="text/javascript" src="js/lib/d3pie.js" ></script>
+<script type="text/javascript" src="js/lib/d3.tip.js" ></script>
+<script type="text/javascript" src="js/applane-core.js" async ></script>
+<script type="text/javascript" src="js/require.js"></script>
+<script>endLoadingTime = new Date();</script>
+</html>

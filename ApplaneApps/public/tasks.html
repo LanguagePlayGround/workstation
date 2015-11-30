@@ -1,0 +1,170 @@
+<!doctype html>
+<html ng-app="radio">
+<head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script src="js/lib/angularv1.3.0-beta.7.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/applane_combined.css" />
+    <style>
+        label input[type="checkbox"] {
+            display: none;
+        }
+
+        label input[type="checkbox"] + .custom-checkbox{
+            background-color: #fafafa;
+            border: 1px solid #cacece;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+            padding: 9px;
+            border-radius: 3px;
+            display: inline-block;
+            position: relative;
+        }
+        label:active input[type="checkbox"] + .custom-checkbox, label:active input[type="checkbox"]:checked + .custom-checkbox {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        label input[type="checkbox"]:checked + .custom-checkbox{
+            background-color: #e9ecee;
+            border: 1px solid #adb8c0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+            color: #99a1a7;
+        }
+
+        label input[type="checkbox"]:checked + .custom-checkbox:after {
+            content: '\2714';
+            font-size: 16px;
+            position: absolute;
+            top: 0px;
+            left: 3px;
+            color: #99a1a7;
+        }
+
+
+        label input[type="checkbox"] + .big-checkbox {
+            padding: 16px;
+        }
+
+        label:active input[type="checkbox"] + .big-checkbox:after , label input[type="checkbox"]:checked + .big-checkbox:after {
+            font-size: 36px;
+            left: 2px;
+            top:  3px;
+        }
+
+        label input[type="radio"] {
+            display: none;
+        }
+
+        label input[type="radio"] + .custom-radio {
+            background-color: #fafafa;
+            border: 1px solid #cacece;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+            padding: 9px;
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+        }
+
+        label input[type="radio"]:checked + .custom-radio:after {
+            content: ' ';
+            width: 12px;
+            height: 12px;
+            border-radius: 50px;
+            position: absolute;
+            top: 3px;
+            background: #99a1a7;
+            box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+            text-shadow: 0px;
+            left: 3px;
+            font-size: 32px;
+        }
+
+        label input[type="radio"]:checked + .custom-radio {
+            background-color: #e9ecee;
+            color: #99a1a7;
+            border: 1px solid #adb8c0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        label:active input[type="radio"] + .custom-radio, label:active input[type="radio"]:checked + .custom-radio {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        label input[type="radio"] + .big-radio {
+            padding: 16px;
+        }
+
+        label input[type="radio"]:checked + .big-radio:after {
+            width: 24px;
+            height: 24px;
+            left: 4px;
+            top: 4px;
+        }
+    </style>
+    <script>
+        function Ctrl($scope) {
+            $scope.value1 = true;
+            $scope.value2 = 'YES';
+            $scope.color = 'red';
+        }
+
+        var app=angular.module('radio', []);
+
+        app.directive('radio', function(){
+            return {
+                restrict: 'E',
+                replace: true,
+                transclude: true,
+                template: function (tElement, tAttrs) {
+                    var more_class = tAttrs.class ? ' '+tAttrs.class : '';
+                    return '<label ng-transclude><input type="radio" ng-model="' + tAttrs.model
+                            + '" value="' + tAttrs.value + '"><div class="custom-radio'+ more_class +'"></div>'
+                }
+            }
+        });
+
+        app.directive('checkbox', function(){
+            return {
+                restrict: 'E',
+                replace: true,
+                transclude: true,
+                template: function (tElement, tAttrs) {
+                    var custom_true  = tAttrs.true  ? ' ng-true-value="'  + tAttrs.true  + '"' : '';
+                    var custom_false = tAttrs.false ? ' ng-false-value="' + tAttrs.false + '"' : '';
+                    var more_class = tAttrs.class ? ' '+tAttrs.class : '';
+                    return '<label ng-transclude><input type="checkbox" ng-model="' + tAttrs.model + '"'+ custom_true + custom_false
+                            + '><div class="custom-checkbox'+ more_class +'"></div>'
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+<form name="myForm" ng-controller="Ctrl">
+    Value1: <label><input type="checkbox" ng-model="value1">
+    <div class="custom-checkbox"></div></label>
+    Value2: <label><input type="checkbox" ng-model="value2"
+                          ng-true-value="YES" ng-false-value="NO">
+    <div class="custom-checkbox big-checkbox"></div>
+</label>
+
+    Value3: <checkbox model="value3" true="YES" false="NO" class="big-checkbox">Value 3</checkbox>
+    <tt>value1 = {{value1}}</tt><br/>
+    <tt>value2 = {{value2}}</tt><br/>
+    <tt>value3 = {{value3}}</tt><br/>
+    <radio model="color" value="yellow" class="big-radio">Yellow</radio>
+    <label><input type="radio" ng-model="color" value="red">
+        <div class="custom-radio"></div>
+        Red
+    </label>
+    <label><input type="radio" ng-model="color" value="green">
+        <div class="custom-radio"></div>
+        Green
+    </label>
+    <label><input type="radio" ng-model="color" value="blue">
+        <div class="custom-radio big-radio"></div>
+        Blue
+    </label>
+    <tt>color = {{color}}</tt><br/>
+</form>
+
+</body>
+</html>

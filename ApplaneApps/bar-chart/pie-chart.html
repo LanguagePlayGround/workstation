@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="myApp" ng-controller="pieChartCtrl">
+<meta charset="utf-8">
+
+<script src="d3.v2.js"></script>
+<script src="angular.js"></script>
+<script src="controller.js"></script>
+<script src="../public/js/Util.js"></script>
+<style>
+    .legend {
+        margin-bottom: 75px;
+        display: inline-block;
+        border-collapse: collapse;
+        border-spacing: 0px;
+    }
+
+    .legend td {
+        padding: 4px 5px;
+        vertical-align: bottom;
+    }
+
+</style>
+
+    <div pie-chart="graphOptions" style="position:absolute;top:50%;right:67%;bottom:10%;left:0% ;">
+    </div>
+
+</body>

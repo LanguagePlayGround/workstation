@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <link rel="icon" href="images/fimbre/fimbre_logo.png">
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+    <script type="text/javascript" src="js/lib/angularv1.3.0-beta.7.js"></script>
+
+
+    <script src="js/q.js"></script>
+    <script type="text/javascript" src="js/Util.js"></script>
+
+    <script type="text/javascript" src="js/ApplaneDB.js"></script>
+    <script type="text/javascript" src="js/FimbreVerifyEmailCtrl.js"></script>
+    <link href="css/FimbreResetPassword.css" rel="stylesheet"/>
+    <link href="/css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+
+
+    <meta charset='utf-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>Fimbre</title>
+</head>
+<body class="login login-sales" ng-app="app" ng-controller="FimbreVerifyEmailCtrl">
+<h1></h1>
+
+
+
+<div class='fimbre-redirect-to-login-link' ng-show='loginLink'>
+    <span ng-show='successMessage'>
+        <span ng-show='successMessage'>
+            <span ng-bind='successMessage'></span>
+        </span>
+    </span><br><br>
+    <a href="fimbre://index.html">Click here to go to Fimbre app</a>
+</div>
+
+
+
+
+</body>
+</html>

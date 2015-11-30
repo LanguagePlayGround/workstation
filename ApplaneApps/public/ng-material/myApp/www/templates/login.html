@@ -1,0 +1,84 @@
+<!--<div class="modal">-->
+    <!--<ion-header-bar>-->
+        <!--<h1 class="title">Login</h1>-->
+    <!--</ion-header-bar>-->
+    <!--<ion-content class="has-header">-->
+        <!--<form ng-submit="doLogin()">-->
+            <!--<div class="list">-->
+                <!--<label class="item item-input ">-->
+                    <!--<span class="input-label">Username</span>-->
+                    <!--<input type="text" ng-model="loginData.username">-->
+                <!--</label>-->
+                <!--<label class="item item-input ">-->
+                    <!--<span class="input-label">Password</span>-->
+                    <!--<input type="password" ng-model="loginData.password">-->
+                <!--</label>-->
+                <!--<label class="item">-->
+                    <!--<button class="button button-block button-positive" ng-click='login()' type="submit">Log in</button>-->
+                <!--</label>-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</ion-content>-->
+<!--</div>-->
+<ion-content class="bg" >
+    <div class="main">
+        <header>
+            <div class="fimbre-logo"></div>
+            <div class="sign-up-options-container">
+                    <fm-google-login></fm-google-login>
+            </div>
+            <div style="margin-bottom: 30px;">
+                <div class="horizontal-line-body">
+                    <hr style="border-top: 1px solid transparent;">
+                </div>
+                <div class="sign-up-with-body">
+                    <div class="padding-bottom-forteen"><i>Or</i></div>
+                </div>
+                <div class="horizontal-line-body">
+                    <hr style="border-top: 1px solid transparent;">
+                </div>
+            </div>
+        </header>
+
+        <article class="login">
+            <form ng-submit="login()">
+                <div>
+                    <div class="fimbre-input-body">
+                        <div class="fimbre-input-image user-icon">
+                        </div>
+                        <div class="display-inline-block">
+                            <input type="text"  ng-model="loginData.username" ng-keyup="$event.keyCode == 13 ? changeFocus() : null" placeholder="Username" autofocus>
+
+                        </div>
+                    </div>
+
+                    <div class="fimbre-input-body">
+                        <div class="fimbre-input-image pwd-icon">
+                        </div>
+                        <div class="display-inline-block">
+                            <input type="password" id="pass" ng-keyup="$event.keyCode == 13 ? login() : null" ng-model="loginData.password" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div ng-show="processed" class="show-login-ionicon">
+                        <div class="inner-login-show">
+                            <i class="ion-loading-c"></i>
+                        </div>
+                    </div>
+
+                    <div class="tic" ng-click='login()'></div>
+                    <div style="margin-top:10px;">
+                        <p ng-click="forgotPassword()">Forget Password?</p>
+                        <p ng-click="showSignup()" >Sign up</p>
+                    </div>
+                </div>
+            </form>
+        </article>
+
+    </div>
+</ion-content>
+<div class="bar bar-footer button-energized" style="position:fixed;" ng-class="{'ng-show':error, 'ng-hide':!error}">
+    <div class="error-msg" ng-bind="errorMsg">The Email or Password you entered is incorrect.</div>
+</div>
+
+

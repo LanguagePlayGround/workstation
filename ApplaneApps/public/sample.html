@@ -1,0 +1,24 @@
+<!doctype HTML>
+<html>
+<head>
+
+    <script type="text/javascript" src="js/lib/angularv1.3.0-beta.7.js"></script>
+    <script type="text/javascript">
+
+        pl = angular.module('pl', [ ]);
+        pl.controller('WorkbenchCtrl', function ($scope) {
+            $scope.address = {"city_city": "hansi"}
+        });
+
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+</head>
+
+<body ng-app="pl" ng-controller="WorkbenchCtrl">
+<input type="text" ng-model="address.city_city"/>
+
+</body>
+
+
+</html>

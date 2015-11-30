@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <title>Applane</title>
+    <link rel="icon" href="images/applane_logo.png">
+    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
+    <link href="css/applane_beta.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/angular-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-addition-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libraries-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/angular-accordion.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+    <script type="text/javascript" src="js/lib/angularv1.3.0-beta.7.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-sanitize.js"></script>
+    <script src="js/lib/angular-strap.js"></script>
+    <script src="js/lib/angular-strap.tpl.js"></script>
+    <script src="js/lib/text-angular.min.js"></script>
+    <script src="js/q.js"></script>
+    <!--<script type="text/javascript" src="http://colorjs.org/temp/q/q-20130830/q.min.js"></script>-->
+    <script type="text/javascript" src="js/AppsViews.js"></script>
+    <script type="text/javascript" src="js/ApplaneDB.js"></script>
+    <script type="text/javascript" src="js/pl-toolbar.js"></script>
+    <script type="text/javascript" src="js/Util.js"></script>
+    <script type="text/javascript" src="js/DataModel.js"></script>
+    <script type="text/javascript" src="js/RowDataModel.js"></script>
+    <script type="text/javascript" src="js/FieldDataModel.js"></script>
+    <script type="text/javascript" src="js/pl-grid.js"></script>
+    <script type="text/javascript" src="js/pl-form.js"></script>
+    <script type="text/javascript" src="js/pl-view.js"></script>
+    <script type="text/javascript" src="js/pl-workbench.js"></script>
+    <script type="text/javascript" src="js/WorkbenchCtrl.js"></script>
+    <script type="text/javascript" src="js/applane-core.js"></script>
+    <script type="text/javascript" src="js/pl-user-preference.js"></script>
+    <script type="text/javascript" src="js/pl-components.js"></script>
+    <script type="text/javascript" src="js/Util.js"></script>
+
+    <script type="text/javascript" src="js/Document.js"></script>
+    <script type="text/javascript" src="js/ModuleManager.js"></script>
+    <script type="text/javascript" src="js/EventManager.js"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+
+    <script type="text/javascript" src="js/date.js"></script>
+    <script type="text/javascript" src="js/lib/pl-accordion.js"></script>
+
+</head>
+<body ng-app="pl" style="margin: 0;" ng-controller="WorkbenchCtrl">
+
+<div style="height: 10%; width: 100%;">
+    <a href ng-click="enablePane()">Togged Pane Disabled</a>
+</div>
+
+<div  style="height: 90%; width: 100%; margin: 0;">
+
+    <angular-accordion>
+        <pane>
+            <pane-header>
+                Header 1
+            </pane-header>
+            <pane-content>
+                Applane Heroku
+            </pane-content>
+        </pane>
+        <pane>
+            <pane-header>
+                Header 2
+            </pane-header>
+            <pane-content>
+                Content 2
+            </pane-content>
+        </pane>
+        <pane>
+            <pane-header>
+                Header 3
+            </pane-header>
+            <pane-content>
+                Content 3
+            </pane-content>
+        </pane>
+    </angular-accordion>
+
+</div>
+</body>
+</html>

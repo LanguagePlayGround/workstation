@@ -1,0 +1,26 @@
+<ion-view title="Detail">
+    <ion-nav-buttons side="left">
+
+
+    </ion-nav-buttons>
+
+    <ion-content>
+    <div class="has-header" >
+
+
+
+        <md-content ng-repeat="group in formOptions.groups" md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+            <custom-input ng-repeat="column in group"   ng-style="{'width':'{{formOptions.columnWidth}}%'}">
+
+
+            </custom-input>
+        </md-content>
+
+
+
+    </div>
+    </ion-content>
+</ion-view>
+
+
+

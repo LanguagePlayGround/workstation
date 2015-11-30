@@ -1,0 +1,31 @@
+.bar.positive {
+    fill: steelblue;
+}
+
+.bar.negative{
+    fill: brown;
+}
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis line{
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+
+/*.x.axis.zero{*/
+    /*fill: none;*/
+    /*stroke: #000;*/
+    /*shape-rendering: crispEdges;*/
+
+/*}*/

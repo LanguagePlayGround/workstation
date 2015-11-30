@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Requirejs Demo</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+    <script type="text/javascript" src="js/lib/angularv1.3.0-beta.7.js"></script>
+    <script type="text/javascript" src="js/lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-sanitize.js"></script>
+    <script type="text/javascript" src="js/lib/angular-strap.js"></script>
+    <script type="text/javascript" src="js/lib/angular-strap.tpl.js"></script>
+    <script type="text/javascript" src="js/lib/text-angular.min.js"></script>
+    <script type="text/javascript" src="test/required.js"></script>
+    <style>
+        .ta-editor {
+            min-height: 150px;
+            height: 150px;
+            overflow: auto;
+            font-family: inherit;
+            font-size: 100%;
+        }
+    </style>
+    <script type="text/javascript">
+        pl.controller('requireCtrl', function ($scope) {
+            requirejs.config({
+                //By default load any module IDs from js/lib
+                //except, if the module ID starts with "app",
+                //load it from the js/app directory. paths
+                //config is relative to the baseUrl, and
+                //never includes a ".js" extension since
+                //the paths config could be for a directory.
+                paths:{
+                    app:'../app'
+                }
+            });
+            $scope.testClick = function () {
+                requirejs(['ApplaneApps/lib/apps/newapps/test2'], function (test) {
+//                    test.getDataFromTest();
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+<div ng-app="pl" ng-controller="requireCtrl" class="container app">
+    <div>
+        <button ng-click="testClick()">click to load file</button>
+    </div>
+</div>
+
+
+</body>
+
+</html>

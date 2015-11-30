@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/applane.css"/>
+    <link rel="stylesheet" type="text/css" href="css/advancesearch.css"/>
+
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/applane-strap_beta.js"></script>
+
+    <script type="text/javascript">
+
+        app.controller('MTMCtrl', function ($scope, $location, $timeout, $appDataSource) {
+            $scope.mtm = {};
+
+            $scope.stockds = new $appDataSource.getLookupDataSource({"table":"stocksymbols__mtm", "primarycolumns":[
+                {"expression":"symbol"}
+            ], "ask":"mtm","max_rows":5});
+        });
+
+
+    </script>
+
+</head>
+
+<body ng-app="applane" ng-controller="MTMCtrl">
+
+<app-lookup style="width:200px;height: 30px;"
+            model='mtm' field='symbolid.symbol' dataSource='stockds'></app-lookup>
+
+
+</body>
+</html>

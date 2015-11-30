@@ -1,0 +1,40 @@
+<!doctype HTML>
+<html>
+<head>
+    <link rel="icon" href="images/applane_logo.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="css/applane_beta.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/angular-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-addition-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libraries-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/resposive.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+    <script type="text/javascript" src="js/lib/angularv1.3.0-beta.7.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-sanitize.js"></script>
+    <script src="js/lib/angular-strap.js"></script>
+    <script src="js/lib/angular-strap.tpl.js"></script>
+    <!--<script src="js/lib/text-angular.min.js"></script>-->
+
+    <script type="text/javascript">
+        var pl = (pl === undefined) ? angular.module('pl', ['ngAnimate', 'ngSanitize', 'mgcrea.ngStrap']) : pl;
+        pl.controller('WorkbenchCtrl', function ($scope, $compile, $timeout, $parse, $q) {
+            $scope.myData = new Date();
+
+        });
+    </script>
+
+    <!--<script type="text/javascript" src="http://colorjs.org/temp/q/q-20130830/q.min.js"></script>-->
+    <!--<script type="text/javascript" src="js/date.js"></script>-->
+
+</head>
+<body ng-app="pl" ng-controller="WorkbenchCtrl">
+<input type="text" bs-datepicker ng-model="myData">
+<input class='app-grid-date-picker-calender-image '  type='text' ng-model='filter.fieldValue'  data-animation='am-flip-x' data-date-format='dd/MM/yyyy' bs-datepicker />
+
+</body>
+</html>

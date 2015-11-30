@@ -1,0 +1,27 @@
+
+#!/bin/sh
+# chkconfig: - 99 01
+
+
+#################################### mro (Maintainance Server) ####################################
+cd /mnt/mroserver/node_modules/ApplaneApps/
+nohup node ForeverMonitor.js SERVER_NAME=mro-5555 PORT=5555 URL=mongodb://127.0.0.1:27017 BASE_URL=AFBSource LINKEDIN_CLIENT_SECRET=amTqFROjNdzDyRk5 LINKEDIN_CALLBACK_URL=/rest/oauth/linkedin/callback LINKEDIN_CLIENT_ID=75ilgzhjxatn7m GOOGLE_CALLBACK_URL=/rest/oauth/google/callback GOOGLE_CLIENT_SECRET=9TNFE_cxNWqPKZ-G6LNs0FE5 GOOGLE_CLIENT_ID=111163199922-k9q5bh110gmsbn57ulk8verbfv7tc7uk@developer.gserviceaccount.com MongoAdmin.PASSWORD=daffodil-applane Admin.DB=pladmin Admin.USER_NAME=admin Admin.PASSWORD=damin MongoAdmin.DB=admin MongoAdmin.USER_NAME=daffodilsw  SERVER_PROFILING=true SERVER_START_UP=true MailCredentials.SEND_ERROR_MAIL=true MailCredentials.AMAZON_REGION=us-west-2 MailCredentials.AMAZON_ACCESS_KEY=AKIAJF5XSYQOJAPXS6HA MailCredentials.AMAZON_SECRET_KEY=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 MailCredentials.FROMNAME="Applane Notification" MailCredentials.SENDGRID_USERNAME=daffodilsw MailCredentials.SENDGRID_PASSWORD=#daffodilsw@123 MailCredentials.FROM=developer@daffodilsw.com MailCredentials.ERROR_PASSWORD=#daffodilsw@123 MailCredentials.ERROR_USERNAME=daffodilsw  REBOOT_AUTOSTART_SERVERS=true 2>/dev/null 1>/dev/null &
+
+####################################      Applane Others       ####################################
+
+
+#################################### mongo 27018 and differentearth website ####################################
+mongod --fork --dbpath="/mnt/GreenLightNew/DataBase/" --port=27018 --logpath="/mnt/GreenLightNew//logs/mongod.log"
+sleep 1
+# Greenlight / Different Earth - Master
+cd /mnt/GreenLightNew/daffodilapps-master/bin/  
+nohup node www port=5911 2>/dev/null 1>/dev/null &
+# Greenlight / Different Earth - Mobile
+cd /mnt/GreenLightNew/differentearth-mobile/bin/
+nohup node www port=5912 2>/dev/null 1>/dev/null &
+
+#################################### EOF ####################################
+
+
+
+

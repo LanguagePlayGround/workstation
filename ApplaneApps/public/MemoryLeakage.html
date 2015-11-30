@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+
+
+    <meta charset='utf-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>Memory leakage</title>
+</head>
+
+<body>
+<div style="border:1px solid #333;">
+   <div style="border: 1px solid #333; width: 33%; display: inline-block;">
+       <P>hello line one</P>
+       <P>hello line two</P>
+       <P>hello line three</P>
+   </div>
+   <div style="border: 1px solid #333; width: 33%;display: inline-block; vertical-align: top;">
+       <p>Hello line one of second div</p>
+   </div>
+   <div style="border: 1px solid #333; display: inline-block;width: 33%; vertical-align: top;">
+       <P> hello line 1 of third div</P>
+   </div>
+</div>
+
+</body>
+</html>

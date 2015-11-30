@@ -1,0 +1,155 @@
+#!/bin/bash
+
+CMD=$1
+
+PREGIT=https://b4fe225e56a1359f3a0353551b073fd1a328d47e:x-oauth-basic@github.com/daffodilsw/
+
+#  ------------------------------------------ Install/Update NPM and Applane Modules ------------------------------------------
+
+if [ ${CMD} = "moduleinstall" ] || [ ${CMD} = "moduleupdate" ] ;
+then
+	NPATH=$2
+	TYPE=$3
+	COMMAND=$4
+	BRANCH=$5
+	if [ ${NPATH} ] && [ ${TYPE} = "npm" ] && [ ${COMMAND} ] ;
+    then
+		cd ${NPATH}
+		npm install ${COMMAND}
+		wait
+	fi
+	if [ ${NPATH} ] && [ ${TYPE} = "framework" ] && [ ${COMMAND} ] ;
+    then
+        hasBranch=null
+    if [ ${COMMAND} = "ApplaneApps" ] || [ ${COMMAND} = "ApplaneDB" ] || [ ${COMMAND} = "ApplaneCore" ] ;
+        then
+            hasBranch="true"
+        fi
+        if [ ${CMD} = "moduleinstall" ] ;
+        then
+            cd ${NPATH}
+            if [ ${BRANCH} ] && [ ${hasBranch} = "true" ] ;
+            then
+                git clone -b ${BRANCH} ${PREGIT}${COMMAND}.git --quiet
+            else
+                 git clone ${PREGIT}${COMMAND}.git --quiet
+            fi
+        elif [ ${CMD} = "moduleupdate" ] ;
+        then
+            NPATH=${NPATH}${COMMAND}
+            cd ${NPATH}
+            if [ ${BRANCH} ] && [ ${hasBranch} = "true" ] ;
+            then
+                git reset --hard ${BRANCH}
+                git pull ${PREGIT}${COMMAND}.git ${BRANCH} --quiet
+            else
+                git reset --hard origin
+                git pull ${PREGIT}${COMMAND}.git --quiet
+            fi
+            fi
+        wait
+    fi
+    if [ ${NPATH} ] && [ ${TYPE} = "source" ] && [ ${COMMAND} ] ;
+    then
+        cd ${NPATH}
+        if [ -d "AFBSource" ] ;
+        then
+            cd ${NPATH}AFBSource/
+            if [ ! -d "node_modules" ] ;
+            then
+                mkdir node_modules
+            fi
+            NPATH=${NPATH}AFBSource/node_modules/
+            cd ${NPATH}
+            if [ ${CMD} = "moduleinstall" ] ;
+            then
+                if [ ${BRANCH} ] ;
+                then
+                    git clone -b ${BRANCH} ${PREGIT}${COMMAND}.git --quiet
+                else
+                    git clone ${PREGIT}${COMMAND}.git --quiet
+                fi
+            elif [ ${CMD} = "moduleupdate" ] ;
+            then
+                if [ ! -d ${COMMAND} ] ;
+                then
+                    cd ${NPATH}
+                    if [ ${BRANCH} ] ;
+                    then
+                        git clone -b ${BRANCH} ${PREGIT}${COMMAND}.git --quiet
+                    else
+                        git clone ${PREGIT}${COMMAND}.git --quiet
+                    fi
+                else
+                    NPATH=${NPATH}${COMMAND}/
+                    cd ${NPATH}
+                     if [ ${BRANCH} ] ;
+                     then
+                        git fetch
+                        git checkout ${BRANCH}
+                        git pull origin ${BRANCH} --quiet
+                    else
+                        git checkout master
+                        git pull origin master --quiet
+                    fi
+                fi
+            fi
+            wait
+        fi
+    fi
+fi
+
+#  ------------------------------------------ Branch Update  ------------------------------------------
+
+if [ ${CMD} = "updatebranch" ] ;
+then
+    NPATH=$2
+	TYPE=$3
+	COMMAND=$4
+	BRANCH=$5
+	if [ ${NPATH} ] && [ ${TYPE} = "framework" ] && [ ${COMMAND} ] ;
+    then
+        hasBranch=null
+        if [ ${COMMAND} = "ApplaneApps" ] || [ ${COMMAND} = "ApplaneDB" ] || [ ${COMMAND} = "ApplaneCore" ] ;
+        then
+            hasBranch="true"
+        fi
+        if [ ${BRANCH} ] && [ ${hasBranch} = "true" ] ;
+        then
+            cd ${NPATH}
+            rm -rf ${COMMAND}
+            git clone -b ${BRANCH} ${PREGIT}${COMMAND}.git --quiet
+        fi
+        wait
+    fi
+fi
+
+#  ------------------------------------------ Check for Path ------------------------------------------
+
+if [ ${CMD} = "checkdirpath" ] ;
+then
+    DIRPATH=$2
+     if [ -d ${DIRPATH} ] ;
+        then
+        echo true
+    else
+        echo false
+    fi
+fi
+
+#  ------------------------------------------ Check for file ------------------------------------------
+
+if [ ${CMD} = "checkfileinpath" ] ;
+then
+    DIRPATH=$2
+    FILENAME=$3
+    cd ${DIRPATH}
+     if [ -f ${FILENAME} ] ;
+        then
+        echo true
+    else
+        echo false
+    fi
+fi
+
+#  ------------------------------------------ ############################### ------------------------------------------

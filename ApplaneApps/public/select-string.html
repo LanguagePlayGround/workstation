@@ -1,0 +1,54 @@
+<!doctype HTML>
+<html>
+<head>
+
+    <link href="css/applane_beta.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/angular-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-addition-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libraries-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+    <script type="text/javascript" src="js/lib/angular1.2.16.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-sanitize.js"></script>
+    <script src="js/lib/angular-strap.js"></script>
+    <script src="js/lib/angular-strap.tpl.js"></script>
+
+    <script src="js/applane-core.js"></script>
+
+
+    <script type="text/javascript" src="js/pl-toolbar.js"></script>
+    <script type="text/javascript" src="js/pl-grid.js"></script>
+    <script type="text/javascript" src="js/pl-form.js"></script>
+    <script type="text/javascript" src="js/pl-components.js"></script>
+
+    <script type="text/javascript">
+        pl.controller('SelectCtrl', function ($scope) {
+//            $scope.selectedIconso = [];
+            $scope.iconso = [
+                "applane1", "applane1", "applane2"
+            ];
+//            $scope.selectedIcons = [];
+            $scope.icons = [
+                {"value":"Gear", "label":"Gear"},
+                {"value":"Globe", "label":"Globe"},
+                {"value":"Heart", "label":"Heart"},
+                {"value":"Camera", "label":"Camera"}
+            ];
+        });
+    </script>
+
+</head>
+<body ng-app="pl" ng-controller="SelectCtrl" style="margin: 10px;">
+<pl-multiple-type-ahead></pl-multiple-type-ahead>
+{{selectedIconso}}
+<br/><br/><br/>
+<button type="button" class="btn btn-default" ng-model="selectedIcons" data-html="1" data-multiple="1"
+        data-animation="am-flip-x" ng-options="icon.value as icon.label for icon in icons" bs-select></button>
+
+{{selectedIcons}}
+</body>
+</html>

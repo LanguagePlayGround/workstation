@@ -1,0 +1,106 @@
+<html>
+<head>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/angular1.3.0.b5.min.js"></script>
+
+
+    <script type="text/javascript">
+        var app = angular.module('applane', [], function () {
+
+        });
+
+        app.directive('ngModelOnblur', function () {
+            return {
+                restrict:'A',
+                require:'ngModel',
+                link:function (scope, elm, attr, ngModelCtrl) {
+                    setTimeout(function () {
+                        if (attr.type === 'radio' || attr.type === 'checkbox') return;
+                        elm.unbind('input').unbind('keydown').unbind('change');
+                        elm.bind('blur', function () {
+                            scope.$apply(function () {
+                                ngModelCtrl.$setViewValue(elm.val());
+                            });
+                        });
+                    })
+
+                }
+            };
+        });
+
+        app.directive('ngModelRemove', function () {
+            return {
+                restrict:'A',
+                require:'ngModel',
+                link:function (scope, elm, attr, ngModelCtrl) {
+                    setTimeout(function () {
+                        if (attr.type === 'radio' || attr.type === 'checkbox') return;
+
+                    })
+
+                }
+            };
+        });
+
+        app.directive('plLowerCase', function () {
+            return {
+                restrict:'A',
+                priority:1,
+                require:'?ngModel',
+                link:function (scope, element, attr, ngModel) {
+                    element.unbind('input').unbind('change');
+
+                    function toLowerCase(value) {
+                        element.val(angular.lowercase(value));
+                    }
+
+                    toLowerCase(ngModel.$modelValue);
+                    ngModel.$render = function () {
+                        console.log("Render called")
+                        toLowerCase(ngModel.$modelValue);
+
+                    };
+                    element.bind("change", function () {
+                        var val = element.val();
+//                        console.log("val>>>" + val)
+//                        console.log("view value>>>" + ngModel.$viewValue)
+//                        console.log("modelValue>>>" + ngModel.$modelValue)
+                        ngModel.$setViewValue(angular.uppercase(val));
+                        scope.$apply();
+//                        console.log("After applying view value>>>" + ngModel.$viewValue)
+//                        console.log("modelValue>>>" + ngModel.$modelValue)
+                    })
+
+
+                }
+            };
+        });
+
+
+        app.controller('BlurCtrl', function ($scope, $compile, $timeout) {
+            $scope.student = {name:"Rohit Bansal"}
+
+        })
+
+
+    </script>
+
+
+</head>
+<body ng-app="applane" ng-controller="BlurCtrl">
+
+<span ng-bind="student | json"></span>
+
+<!--<br>Bind on blur but not on key down<br>-->
+<!--<input ng-model-onblur ng-model="student.name" type="text"/>-->
+<!--<br>Do not bind on key down or blur<br>-->
+<!--<input ng-model-remove ng-model="student.name" type="text"/>-->
+<!--<br>Bind on key down<br>-->
+<!--<input ng-model="student.name" type="text"/>-->
+
+
+<input type="text" ng-model="student.name" pl-lower-case>
+<input type="text" ng-model="student.name">
+
+</body>
+</html>

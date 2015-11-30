@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applane Grid</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        html {
+            font-size: initial;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'RobotDraft';
+            line-height: normal;
+            background: #f0f0f0;
+            color: #414141;
+
+        }
+
+        .header {
+            border-bottom: 1px solid #ccc;
+            padding: 7px 7px 7px 10px;
+            font-size: 16px;
+            position: relative;
+            background: rgb(218, 218, 218);
+        }
+
+        .title {
+
+        }
+
+        .action {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 7px 10px;
+        }
+
+        .cell-wrapper {
+            float: left;
+            min-width: 420px;
+            width: 33.33%;
+
+        }
+
+        .cell {
+            background: #F4F4F4;
+            box-shadow: 1px 1px 3px #CACACA;
+            font-family: 'RobotoDraft';
+            margin: 10px 0 3px 10px;
+            border: 1px solid #C2C2C2;
+        }
+
+        .cell-wrapper:last-child .cell {
+            margin-right: 10px;
+        }
+
+        .cell-body {
+            padding: 10px;
+            background: white;
+        }
+
+        .top-layer {
+            position: relative;
+            /*border-bottom: 1px solid #ccc;*/
+            display: inline-flex;
+            width: 100%;
+            padding: 15px 0 10px 0;
+        }
+
+        .mid-layer {
+            display: inline-flex;
+            padding: 5px 0 3px 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .mid-layer .txt {
+            font-size: 18px;
+            padding: 0 3px;
+        }
+
+        .big-text {
+            font-size: 42px;
+            line-height: 40px;
+            text-align: center;
+            margin-right: -65px;
+            flex: 1;
+        }
+
+        .right-text {
+            font-size: 20px;
+            /*color: white;*/
+            padding: 8px 0px 8px 15px;
+        }
+
+        .flex {
+            flex: 1;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .right {
+            text-align: right
+        }
+
+        .block {
+            display: block;
+            line-height: 20px;
+            /*text-align: right;*/
+            /*position: absolute;*/
+            right: 0;
+            font-family: 'helvetica';
+        }
+
+        .drill-down {
+            width: 18px;
+            background: url('images/drill-down.gif') no-repeat;
+            height: 14px;
+            background-size: 18px;
+            display: inline-block;
+        }
+
+        .list-view {
+            background: url("images/list-view.ico") no-repeat scroll 0 1px/14px rgba(0, 0, 0, 0);
+            width: 14px;
+            height: 15px;
+            display: inline-block;
+        }
+
+        .per-box {
+        }
+
+        .green {
+            color: rgb(0, 232, 0);
+        }
+
+        .rr {
+            color: rgb(227, 43, 35);
+        }
+
+        .up {
+            background: url("images/d1.png") no-repeat;
+            width: 20px;
+            height: 22px;
+            display: inline-block;
+            background-size: 13px;
+            background-position: 3px 8px;
+        }
+
+        .down {
+            background: url("images/d2.jpg") no-repeat;
+            width: 20px;
+            height: 22px;
+            display: inline-block;
+            background-size: 13px;
+            background-position-x: 3px 8px;
+        }
+
+        .per {
+            display: block;;
+            color: rgb(139, 139, 139);
+        }
+
+        .down.small, .up.small {
+            background-size: 10px;
+            background-position: 0px 12px;
+            width: 10px;
+        }
+
+        .tailer-txt {
+            color: rgb(139, 139, 139);
+            font-size: 12px;
+        }
+    </style>
+    <!--<script type="text/javascript" src="js/jquery.js"></script>-->
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('myCtrl', function ($scope) {
+            $scope.cells = [
+                {
+                    title:'Revenue',
+                    month:{date:'1 Nov - 20 Nov', value:785455229, revenue:45645, qDate:'1 Apr - 30 July'}
+                },
+                {
+                    title:'Sales',
+                    month:{date:'1 Nov - 20 Nov', value:75742, revenue:75684, qDate:'1 Aug - 30 Nov'}
+                },
+                {
+                    title:'Products',
+                    month:{date:'1 Nov - 20 Nov', value:197542, revenue:9786, qDate:'1 Apr - 30 July'}
+                }
+            ];
+        });
+    </script>
+
+    <!--<script type="text/javascript" src="js/pl-controller.js"></script>-->
+
+</head>
+<body ng-app='myApp' ng-controller='myCtrl'>
+<!--<div>-->
+<!--<div ng-repeat='cell in cells' class="cell-wrapper">-->
+<!--<div class="cell" >-->
+<!--<div class="header">-->
+<!--<div class="title center" ng-bind='cell.title'></div>-->
+<!--<div class="action">-->
+<!--<span class="icon-plus" ></span>-->
+<!--<span class="icon-code-fork" style="padding: 0 7px;"></span>-->
+<!--<span class="list-view"></span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="cell-body">-->
+<!--<div class="top-layer">-->
+<!--&lt;!&ndash;<div><span class="block" ng-bind-template='( {{cell.month.date}} )'></span></div>&ndash;&gt;-->
+<!--<div class="big-text">-->
+<!--<i class="icon-rupee" style="font-size: 40px;"></i>-->
+<!--<span ng-bind='cell.month.value | number'></span>-->
+<!--</div>-->
+<!--<div class="right-text"><span style="vertical-align: 1px;">25%</span><span class="up"></span></div>-->
+<!--</div>-->
+<!--<div class="mid-layer">-->
+<!--<div class="flex">1 Oct - 31 Dec</div>-->
+<!--<div class="flex center">40,572</div>-->
+<!--<div class="flex right"><span class="per-box">25%</span></div>-->
+<!--</div>-->
+<!--<div class="mid-layer">-->
+<!--<div class="flex">1 Apr - 31 Dec</div>-->
+<!--<div class="flex center">51,702</div>-->
+<!--<div class="flex right"><span class="per-box rr">30%</span></div>-->
+<!--</div>-->
+<!--<div class="bottom-layer"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div style="clear: both;"></div>-->
+<!--<div>-->
+<!--<div ng-repeat='cell in cells' class="cell-wrapper">-->
+<!--<div class="cell" >-->
+<!--<div class="header">-->
+<!--<div class="title center" ng-bind='cell.title'></div>-->
+<!--<div class="action">-->
+<!--<span class="icon-plus" ></span>-->
+<!--<span class="icon-code-fork" style="padding: 0 7px;"></span>-->
+<!--<span class="list-view"></span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="cell-body">-->
+<!--<div class="top-layer">-->
+<!--<div class="big-text">-->
+<!--<i class="icon-rupee" style="font-size: 40px;"></i>-->
+<!--<span ng-bind='cell.month.value | number'></span>-->
+<!--<span class="block" ng-bind-template='( {{cell.month.date}} )'></span>-->
+<!--</div>-->
+<!--<div class="right-text rr"><span style="vertical-align: 8px;">25%</span><span class="down"></span></div>-->
+<!--</div>-->
+<!--<div class="top-layer" style="padding:  0 0 15px 0;">-->
+<!--<div class="big-text" style="font-size: 20px;line-height: 20px;">-->
+<!--<i class="icon-rupee" style="font-size: 18px;"></i>-->
+<!--<span ng-bind='cell.month.revenue | number' style="letter-spacing: 3px;"></span>-->
+<!--<span class="block" ng-bind-template='( {{cell.month.qDate}} )'></span>-->
+<!--</div>-->
+<!--<div class="right-text rr" style="padding: 0;"><span style="vertical-align: 8px;">25%</span></div>-->
+<!--</div>-->
+<!--<div class="top-layer" style="padding: 0;">-->
+<!--<div class="big-text" style="font-size: 20px;line-height: 20px;">-->
+<!--<i class="icon-rupee" style="font-size: 18px;"></i>-->
+<!--<span ng-bind='cell.month.revenue | number' style="letter-spacing: 3px"></span>-->
+<!--<span class="block" ng-bind-template='( {{cell.month.qDate}} )'></span>-->
+<!--</div>-->
+<!--<div class="right-text rr" style="padding: 0;"><span style="vertical-align: 8px;">25%</span></div>-->
+<!--</div>-->
+<!--<div class="bottom-layer"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<div style="clear: both;">
+    <div ng-repeat='cell in cells' class="cell-wrapper">
+        <div class="cell">
+            <div class="header">
+                <div class="title center" ng-bind='cell.title'></div>
+                <div class="action">
+                    <span class="icon-plus"></span>
+                    <span class="icon-code-fork" style="padding: 0 7px;"></span>
+                    <span class="list-view"></span>
+                </div>
+            </div>
+            <div class="cell-body">
+                <div class="top-layer">
+                    <div class="big-text">
+                        <i class="icon-rupee" style="font-size: 40px;"></i>
+                        <span ng-bind='cell.month.value | number'></span>
+
+                        <div><span class="block tailer-txt" ng-bind-template='{{cell.month.date}}'></span></div>
+                    </div>
+                    <div class="right-text green"><span>25%</span><span class="up"></span></div>
+                </div>
+                <div class="mid-layer">
+                    <div class="flex center">
+                        <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">4072</span><span class="per-box green">25%</span><span
+                            class="up small"></span>
+
+                        <div class="center tailer-txt">1 Oct - 31 Dec</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear: both;">
+    <div ng-repeat='cell in cells' class="cell-wrapper">
+        <div class="cell">
+            <div class="header">
+                <div class="title center" ng-bind='cell.title'></div>
+                <div class="action">
+                    <span class="icon-plus"></span>
+                    <span class="icon-code-fork" style="padding: 0 7px;"></span>
+                    <span class="list-view"></span>
+                </div>
+            </div>
+            <div class="cell-body">
+                <div class="top-layer">
+                    <div class="big-text">
+                        <i class="icon-rupee" style="font-size: 40px;"></i>
+                        <span ng-bind='cell.month.value | number'></span>
+
+                        <div><span class="block tailer-txt" ng-bind-template='( {{cell.month.date}} )'></span></div>
+                    </div>
+                    <div class="right-text green"><span>25%</span><span class="up"></span></div>
+                </div>
+
+                <div class="mid-layer">
+                    <div class="flex center">
+                        <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">4072</span><span class="per-box green">25%</span><span
+                            class="up small"></span>
+
+                        <div class="center tailer-txt">1 Oct - 31 Dec</div>
+                    </div>
+                    <div class="flex center">
+                        <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">51702</span><span class="per-box rr">30%</span><span
+                            class="down small"></span>
+
+                        <div class="center tailer-txt">1 Apr - 31 Sep</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="clear: both;">
+<div ng-repeat='cell in cells' class="cell-wrapper">
+    <div class="cell">
+        <div class="header">
+            <div class="title center" ng-bind='cell.title'></div>
+            <div class="action">
+                <span class="icon-plus"></span>
+                <span class="icon-code-fork" style="padding: 0 7px;"></span>
+                <span class="list-view"></span>
+            </div>
+        </div>
+        <div class="cell-body">
+            <div class="top-layer">
+                <div class="big-text">
+                    <i class="icon-rupee" style="font-size: 40px;"></i>
+                    <span ng-bind='cell.month.value | number'></span>
+
+                    <div><span class="block tailer-txt" ng-bind-template='( {{cell.month.date}} )'></span></div>
+                </div>
+                <div class="right-text green"><span>25%</span><span class="up"></span></div>
+            </div>
+
+            <div class="mid-layer">
+                <div class="flex center">
+                    <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">4072</span><span
+                        class="per-box green">25%</span><span class="up small"></span>
+
+                    <div class="center tailer-txt">1 Oct - 31 Dec</div>
+                </div>
+                <div class="flex center">
+                    <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">51702</span><span
+                        class="per-box rr">30%</span><span class="down small"></span>
+
+                    <div class="center tailer-txt">1 Apr - 31 Sep</div>
+                </div>
+                <div class="flex center">
+                    <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">51702</span><span
+                        class="per-box rr">30%</span><span class="down small"></span>
+
+                    <div class="center tailer-txt">1 Apr - 31 Sep</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div style="clear: both;">
+<div ng-repeat='cell in cells' class="cell-wrapper">
+    <div class="cell">
+        <div class="header">
+            <div class="title center" ng-bind='cell.title'></div>
+            <div class="action">
+                <span class="icon-plus"></span>
+                <span class="icon-code-fork" style="padding: 0 7px;"></span>
+                <span class="list-view"></span>
+            </div>
+        </div>
+        <div class="cell-body">
+            <div class="top-layer">
+                <div class="big-text">
+                    <i class="icon-rupee" style="font-size: 40px;"></i>
+                    <span ng-bind='cell.month.value | number'></span>
+
+                    <div><span class="block tailer-txt" >MTD</span></div>
+                </div>
+                <div class="right-text green"><span>25%</span><span class="up"></span></div>
+            </div>
+
+            <div class="mid-layer">
+                <div class="flex center">
+                    <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">4072</span><span
+                        class="per-box green">25%</span><span class="up small"></span>
+
+                    <div class="center tailer-txt">WTD</div>
+                </div>
+                <div class="flex center">
+                    <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">51702</span><span
+                        class="per-box rr">30%</span><span class="down small"></span>
+
+                    <div class="center tailer-txt">QTD</div>
+                </div>
+                <div class="flex center">
+                    <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">51702</span><span
+                        class="per-box rr">30%</span><span class="down small"></span>
+
+                    <div class="center tailer-txt">YTD</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div style="clear: both;">
+    <div ng-repeat='cell in cells' class="cell-wrapper">
+        <div class="cell">
+            <div class="header">
+                <div class="title center" ng-bind='cell.title'></div>
+                <div class="action">
+                    <span class="icon-plus"></span>
+                    <span class="icon-code-fork" style="padding: 0 7px;"></span>
+                    <span class="list-view"></span>
+                </div>
+            </div>
+            <div class="cell-body">
+                <div class="top-layer">
+                    <div class="big-text" style="margin-right: 0;">
+                        <i class="icon-rupee" style="font-size: 40px;padding-left: 60px;"></i>
+                        <span ng-bind='cell.month.value | number'></span>
+                        <span class="right-text green" style="padding: 0;"><span>25%</span><span class="up"></span></span>
+                        <div><span class="block tailer-txt" >MTD</span></div>
+                    </div>
+
+                </div>
+
+                <div class="mid-layer">
+                    <div class="flex center">
+                        <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">4072</span><span
+                            class="per-box green">25%</span><span class="up small"></span>
+                        <div class="center tailer-txt">WTD</div>
+                    </div>
+                    <div class="flex center">
+                        <i class="icon-rupee" style="font-size: 16px;"></i><span class="txt">51702</span><span
+                            class="per-box rr">30%</span><span class="down small"></span>
+                        <div class="center tailer-txt">QTD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var USER_INFO = "session.userinfo";
+        var USER_NAME = "session.user.name";
+        var SIGN_OUT ="logOut";
+        var TABS  ="session.tabs";
+        var VIEW  ="session.centerView ;
+        var LOAD_USER = "ctrl.loadUser"
+    </script>
+    <script type="text/javascript" src="./controller.js">
+
+    </script>
+    <script type="text/javascript">
+        var appCtrl = undefined;
+        function onpageLoad() {
+            appCtrl = ApplaneController.init();
+            var sessionid = localStorage.sessionid;
+            if (sessionid) {
+                appCtrl.loadUser(sessionid).then(function(userInfo){
+
+                });
+            } else {
+                window.location.href = "/login.html";
+            }
+        }
+        function signout() {
+            appCtrl[SIGN_OUT]();
+        }
+        function onQViewClick(view) {
+            appCtrl.loadView(view, "center", "set");
+
+        }
+
+        document.create("applane-view", function (appViewElement,view) {
+            var type = appView.type;    //TODO how to get appView
+            if (type == "grid") {
+                var gridOptions = {};
+                //populate grid options
+                appViewElement.append("<applane-grid columns="", data:"" ></applane-grid>");
+
+            } else if (type == "form") {
+
+            } else if (type == "dashoboard") {
+
+            } else {
+                throw new Error("Type not supported[" + type + "]");
+            }
+
+        })
+    </script>
+</head>
+<body onload="onpageLoad()">
+
+<span>{{USER_NAME}}</span>
+<span onclick="signout()">Signout</span>
+<tabs data=TABS onclick="onTab"></tabs>
+
+{{for qviews}}
+<span id={{id}} onclick="onQViewClick(index)">{{label}}</span>
+{{end for}}
+
+
+<applane-view structure=CENTER_VIEW></applane-view>
+<applane-view structure=SIDE_VIEW ></applane-view>
+
+
+
+//for mobile
+
+<header>
+    <applane-toolbar height="50px"  ></applane-toolbar>
+</header>
+<content-section>
+    <applane_view></applane-view>
+</content-section>
+
+
+<div flex>
+<applane-view ></applane-view>
+</div>
+//end of for mobile
+
+</body>
+</html>

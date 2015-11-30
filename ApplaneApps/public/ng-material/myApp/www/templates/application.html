@@ -1,0 +1,28 @@
+<ion-view title="Menus">
+        <div class="bar bar-header bar-energized">
+            <div class="buttons">
+                <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+            </div>
+            <h1 class="title">Menus</h1>
+            <div class="buttons">
+                <button class="button">save</button>
+            </div>
+        </div>
+
+    <ion-content class="has-header">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+        <pl-view ng-repeat="view in workbenchOptions.views"></pl-view>
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="bar-positive">
+        <div class="buttons">
+            <button class="button" ng-click="workbenchOptions.deleteRows=!workbenchOptions.deleteRows">Delete</button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons" ng-click="doSomething()">
+            <button class="button" ng-click="workbenchOptions.reorderItems=!workbenchOptions.reorderItems">Reorder</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>
+

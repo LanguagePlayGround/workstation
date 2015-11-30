@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>Ionic Template</title>
+
+    <link href="css/LabelClasses.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <!--<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.6.1/angular-material.min.css">-->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/material/ngMessage.js"></script>
+    <!--<script src="lib/material/docs.js"></script>-->
+    <script src="lib/ionic/js/angular/angular-animate.js"></script>
+    <script src="lib/material/hammer.js"></script>
+    <script src="lib/material/angular-aria.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
+    <script src="lib/material/material.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/netDetailCtrl.js"></script>
+    <script src="js/component.js"></script>
+    <link href="css/ngMaterial.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body ng-app="starter">
+
+        <div ng-app="inputBasicDemo" ng-controller="DemoCtrl" layout="column">
+            <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
+                <md-input-container>
+                    <label>Title</label>
+                    <input ng-model="user.title">
+                </md-input-container>
+                <md-input-container>
+                    <label>Email</label>
+                    <input ng-model="user.email" type="email">
+                </md-input-container>
+            </md-content>
+            <md-content class="md-padding">
+                <form name="userForm">
+                    <div layout layout-sm="column">
+                        <md-input-container style="width:80%">
+                            <label>Company (Disabled)</label>
+                            <input ng-model="user.company" disabled>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Submission Date</label>
+                            <input type="date" ng-model="user.submissionDate">
+                        </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>First Name</label>
+                            <input ng-model="user.firstName" placeholder="Placeholder text">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Last Name</label>
+                            <input ng-model="theMax">
+                        </md-input-container>
+                    </div>
+                    <md-input-container flex>
+                        <label>Address</label>
+                        <input ng-model="user.address">
+                    </md-input-container>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>City</label>
+                            <input ng-model="user.city">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>State</label>
+                            <input ng-model="user.state">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Postal Code</label>
+                            <input ng-model="user.postalCode">
+                        </md-input-container>
+                    </div>
+                    <md-input-container flex>
+                        <label>Biography</label>
+                        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+                    </md-input-container>
+                </form>
+            </md-content>
+        </div>
+
+
+
+<script>
+
+    HTMLJS
+    angular
+            .module('inputBasicDemo', ['ngMaterial', 'ngMessages'])
+            .controller('DemoCtrl', function($scope) {
+                $scope.user = {
+                    title: 'Developer',
+                    email: 'ipsum@lorem.com',
+                    firstName: '',
+                    lastName: '' ,
+                    company: 'Google' ,
+                    address: '1600 Amphitheatre Pkwy' ,
+                    city: 'Mountain View' ,
+                    state: 'CA' ,
+                    biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
+                    postalCode : '94043'
+                };
+            })
+            .config( function($mdThemingProvider){
+                // Configure a dark theme with primary foreground yellow
+                $mdThemingProvider.theme('docs-dark', 'default')
+                        .primaryPalette('yellow')
+                        .dark();
+            });
+</script>
+
+</body>
+</html>

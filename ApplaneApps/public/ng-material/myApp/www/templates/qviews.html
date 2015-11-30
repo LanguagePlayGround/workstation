@@ -1,0 +1,39 @@
+<ion-view title="">
+    <ion-nav-buttons side="left">
+        <div class="bar-header">
+            <div class="h1 title">Quick Menus</div>
+        </div>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+        <ion-list show-delete="workbenchOptions.deleteRows" show-reorder="workbenchOptions.reorderItems" can-swipe="true">
+            <ion-item ng-repeat="menu in workbenchOptions.qviews" ng-click="getView()" ng-class="{'item-thumbnail-left':menu.img}"  class="">
+                <img ng-if="menu.img" ng-src="{{menu.img}}" />
+                {{menu.label}}
+                <ion-option-button class="button-positive" ng-click="share(menu)">
+                    Delete
+                </ion-option-button>
+                <ion-option-button class="button-info" ng-click="edit(menu)">
+                    Edit
+                </ion-option-button>
+                <ion-delete-button class="ion-minus-circled" ng-click="menu.splice($index, 1)">
+                </ion-delete-button>
+                <ion-reorder-button class="ion-navicon" on-reorder="reorderItem(menu, $fromIndex, $toIndex)">
+                </ion-reorder-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-footer-bar align-title="left" class="bar-positive">
+        <div class="buttons">
+            <button class="button" ng-click="workbenchOptions.deleteRows=!workbenchOptions.deleteRows">Delete</button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons" ng-click="doSomething()">
+            <button class="button" ng-click="workbenchOptions.reorderItems=!workbenchOptions.reorderItems">Reorder</button>
+        </div>
+    </ion-footer-bar>
+
+</ion-view>

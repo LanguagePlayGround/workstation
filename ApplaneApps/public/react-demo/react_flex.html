@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/lib/jquery-1.11.2.min.js"></script>
+    <script src="js/reactjs.js"></script>
+    <script src="js/transform.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        [flex='true']{display: flex;}
+        .group{display: flex;border: 1px solid #A8A8A8;background-color: #E7E7E7;margin: 20px 10px 10px 10px;flex-wrap: wrap;font-family: sans-serif;}
+        .group .cell-wrapper{flex:1;}
+        .group .cell{border-right:1px solid #A8A8A8;border-left:1px solid #A8A8A8;margin-left: -1px;flex:1;padding: 15px;}
+        .group .cell:last-child{border-right:none;}
+        .cell > div {padding: 15px;}
+        .cell label{display: block;}
+        .cell input, .cell input:focus{width:100%;border:none;padding: 0;margin: 0;outline: 1px solid #333;outline-offset: 0;line-height: 30px;}
+        .group .cell-wrapper[data-cell-span="20"]{min-width: 20%;max-width: 20%;}
+        .group .cell-wrapper[data-cell-span="25"]{min-width: 25%;max-width: 25%;}
+        .group .cell-wrapper[data-cell-span="33"]{min-width: 33.33%;max-width: 33.33%;}
+        .group .cell-wrapper[data-cell-span="40"]{min-width: 40%;max-width: 40%;}
+        .group .cell-wrapper[data-cell-span="50"]{min-width: 50%;max-width: 50%;}
+        .group .cell-wrapper[data-cell-span="60"]{min-width: 60%;max-width: 60%;}
+        .group .cell-wrapper[data-cell-span="66"]{min-width: 66.66%;max-width: 66.66%;}
+        .group .cell-wrapper[data-cell-span="75"]{min-width: 75%;max-width: 75%;}
+        .group .cell-wrapper[data-cell-span="80"]{min-width: 80%;max-width: 80%;}
+        @media only screen and (max-width: 700px){
+            .group {flex-direction: column;}
+            .group .cell-wrapper[data-cell-span]{min-width: inherit;max-width: inherit;}
+            .group .cell{border:none;}
+        }
+
+    </style>
+</head>
+<body>
+<div id="grid"></div>
+<script src="js/layout.js" type="text/jsx"></script>
+</body>
+</html>

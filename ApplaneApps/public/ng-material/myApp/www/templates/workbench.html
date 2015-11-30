@@ -1,0 +1,7 @@
+<ion-view view-title="Grid">
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+                <pl-view ng-repeat="view in workbenchOptions.views"></pl-view>
+    </ion-content>
+</ion-view>

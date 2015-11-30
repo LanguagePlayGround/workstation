@@ -1,0 +1,83 @@
+body, html {
+    font-size: 11pt;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.json-editor{
+    color: #1A1A1A;
+    border: 1px solid #97B0F8;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    padding: 0;
+    line-height: 100%;
+}
+
+.json-textarea{
+    position: absolute;
+    z-index: 0;
+    width: 0.5em;
+    height: 1em;
+    opacity: 0;
+    background: transparent;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+    font: inherit;
+    padding: 0 1px;
+    margin: 0 -1px;
+    text-indent: -1em;
+    -ms-user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    user-select: text;
+    font-size: 10pt;
+    color: #1A1A1A;
+}
+.ace_cursor {
+    z-index: 4;
+    position: absolute;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 2px solid;
+    -webkit-animation: blink 1s infinite linear ;
+    animation: blink 0.3s infinite linear;
+}
+.ace-jsoneditor .ace_cursor {
+    border-left: 2px solid #000000;
+}
+.ace_hidden-cursors .ace_cursor {
+    opacity: 0.2;
+}
+.ace_layer {
+    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    white-space: pre;
+    height: 100%;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+.json-line-grp{
+    height: 16px;
+}
+
+@-webkit-keyframes blink {
+    0%{opacity: 0;} 60%{opacity: 0;} 100%{opacity: 1}
+}
+@keyframes blink {
+    0%{opacity: 0;} 60%{opacity: 0;} 100%{opacity: 1}
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+
+    <link rel="icon" href="images/applane_logo.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="css/applane_beta.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/angular-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-addition-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/libraries-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/resposive.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>-->
+    <!--<script src="https://code.angularjs.org/1.3.0-rc.5/angular.min.js"></script>-->
+    <script type="text/javascript" src="js/lib/angularv1.3.0-beta.7.js"></script>
+    <script src="js/lib/angular-cookies.js"></script>
+    <!--<script src="https://code.angularjs.org/1.3.0-rc.5/angular-animate.min.js"></script>-->
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-sanitize.js"></script>
+    <script src="js/lib/angular-strap.js"></script>
+    <script src="js/lib/angular-strap.tpl.js"></script>
+    <script src="js/lib/text-angular.min.js"></script>
+    <script src="js/q.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+    <script>Date.now = function () {
+        return +new Date;
+    };</script>
+    <!-- expect Date.now() with numeric timestamp but date.js return its object, so we override it manually (resuired in d3js animation) -->
+    <script type="text/javascript" src="js/lib/d3.v3.js"></script>
+    <script type="text/javascript" src="js/lib/d3pie.js"></script>
+    <!--<script type="text/javascript" src="http://colorjs.org/temp/q/q-20130830/q.min.js"></script>-->
+    <script type="text/javascript" src="js/AppsViews.js"></script>
+    <script type="text/javascript" src="js/lru-cache.js"></script>
+    <script type="text/javascript" src="js/ApplaneDB.js"></script>
+    <script type="text/javascript" src="js/pl-toolbar.js"></script>
+    <script type="text/javascript" src="js/Util.js"></script>
+    <script type="text/javascript" src="js/DataModel.js"></script>
+    <script type="text/javascript" src="js/RowDataModel.js"></script>
+    <script type="text/javascript" src="js/FieldDataModel.js"></script>
+    <script type="text/javascript" src="js/pl-grid.js"></script>
+    <script type="text/javascript" src="js/pl-form.js"></script>
+    <script type="text/javascript" src="js/pl-dashboard.js"></script>
+    <script type="text/javascript" src="js/pl-html.js"></script>
+    <script type="text/javascript" src="js/pl-view.js"></script>
+    <script type="text/javascript" src="js/pl-graph.js"></script>
+    <script type="text/javascript" src="js/pl-workbench.js"></script>
+    <script type="text/javascript" src="js/WorkbenchCtrl.js"></script>
+    <script type="text/javascript" src="js/applane-core.js"></script>
+    <script type="text/javascript" src="js/pl-user-preference.js"></script>
+    <script type="text/javascript" src="js/pl-components.js"></script>
+
+
+    <script type="text/javascript" src="js/Document.js"></script>
+    <script type="text/javascript" src="js/ModuleManager.js"></script>
+    <script type="text/javascript" src="js/EventManager.js"></script>
+    <script type="text/javascript" src="js/ViewUtility.js"></script>
+    <script type="text/javascript" src="js/DashboardDataModel.js"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+
+    <title>Memory leakage</title>
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('myCtrl', function ($scope) {
+            $scope.timeStamp = new Date().getTime();
+            $scope.data = [];
+            $scope.tds = {td1:'Name', td2:'class', td3:'Roll_No', td4:'Gender', td5:'Address', td6:'College', td7:'School'}
+            for (var i = 0; i < 200; ++i) {
+                $scope.data[i] = {};
+                if (i % 2) {
+                    $scope.data[i]['show'] = true;
+                } else {
+                    $scope.data[i]['show'] = false;
+                }
+                for (var key in $scope.tds) {
+                    $scope.data[i][$scope.tds[key]] = Math.random();
+                }
+            }
+        });
+        myApp.directive('testDir', ['$compile', function ($compile) {
+            return{
+                restrict:'EA',
+                replace:true,
+                compile:function () {
+                    return{
+                        pre:function ($scope, iElement) {
+                            $scope.addTemplate = function () {
+                                var Q = require("q");
+                                var D = Q.defer();
+                                var template = '<div>' +
+                                        '   <table class="applane-grid-body app-width-full">' +
+                                        '       <tr ng-repeat="row in data"  >' +
+                                        '           <td>{{$index}}</td>' +
+                                        '           <td  ng-repeat="td in tds" ><pl-grid-td></pl-grid-td></td>' +
+                                        '       </tr>' +
+                                        '   </table>' +
+                                        '</div>';
+                                iElement.append(($compile)(template)($scope));
+                                D.resolve();
+                                return D.promise;
+                            }
+                            $scope.addTemplate().then(function () {
+                                var newStamp = new Date().getTime();
+                                console.log('time taken in rendering >>> ' + (newStamp - $scope.timeStamp) + ' ms');
+                            })
+
+                        }
+                    }
+                }
+            }
+        }]);
+
+        myApp.directive('plGridTd', ['$compile', function ($compile) {
+            return{
+                restrict:'EA',
+                replace:true,
+                template:'<span ng-class="{\'heloo\':row.show}" ng-bind="row[td]"></span>'
+            }
+        }])
+    </script>
+
+</head>
+
+<body class="absolute-wrapper app-overflow-auto">
+<div ng-app='myApp' ng-controller='myCtrl'>
+    <div test-dir></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <meta name="viewport" content="initial-scale=1"/>
+    <!-- Angular Material Dependencies -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-area.js"></script>
+
+    <script src="js/angular-material.js"></script>
+</head>
+<body ng-app="sidenavDemo1">
+<md-toolbar layout="row" flex>
+    <!--<md-button class="menu" >-->
+        <!--<md-icon md-svg-src="assets/svg/share.svg"></md-icon>-->
+        <!--Applane v2-->
+    <!--</md-button>-->
+    <h1 class="md-toolbar-tools">People</h1>
+</md-toolbar>
+<div ng-controller="AppCtrl" layout="column" >
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Applications</h1>
+            </md-toolbar>
+            <md-content layout-padding ng-controller="LeftCtrl">
+                <md-button ng-click="close()" class="md-primary" hide-md>
+                    Close Sidenav Left
+                </md-button>
+                <p show-gt-md>
+                    This sidenav is locked open on your device. To go back to the default behavior,
+                    narrow your display.
+                </p>
+
+            </md-content>
+        </md-sidenav>
+        <md-content flex layout-padding>
+            <div layout="column" layout-fill layout-align="top center">
+                <div>
+                    <md-button ng-click="toggleLeft()"
+                               class="md-primary" show-gt-md>
+                        Toggle left
+                    </md-button>
+                </div>
+            </div>
+            <div flex></div>
+        </md-content>
+
+
+    </section>
+</div>
+<script>
+    angular
+            .module('sidenavDemo1', ['ngMaterial'])
+            .config(function ($mdIconProvider) {
+                $mdIconProvider.defaultIconSet('assets/svg/avatar.svg');
+            })
+            .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+                $scope.toggleLeft = buildToggler('left');
+                $scope.toggleRight = buildToggler('right');
+                /**
+                 * Build handler to open/close a SideNav; when animation finishes
+                 * report completion in console
+                 */
+                function buildToggler(navID) {
+                    return function () {
+                        return $mdSidenav(navID).toggle()
+                                .then(function () {
+                                    $log.debug("toggle " + navID + " is done");
+                                });
+                    }
+                }
+            })
+            .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+                $scope.close = function () {
+                    $mdSidenav('left').close()
+                            .then(function () {
+                                $log.debug("close LEFT is done");
+                            });
+                };
+            })
+    .controller('MyController', function($scope, $mdBottomSheet) {
+        $scope.openBottomSheet = function() {
+            $mdBottomSheet.show({
+                template: '<md-bottom-sheet>Hello!</md-bottom-sheet>'
+            });
+        };
+    });
+</script>
+</body>
+</html>

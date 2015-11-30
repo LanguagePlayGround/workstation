@@ -1,0 +1,18 @@
+.datepicker.dropdown-menu {
+    height: 240px;
+    padding: 0 5px;
+    width: 260px;
+}
+.datepicker.dropdown-menu button {
+    border: 0 none;
+    outline: 0 none;
+}
+.datepicker.dropdown-menu tbody {
+    height: 180px;
+}
+.datepicker.dropdown-menu tbody button {
+    padding: 6px;
+}
+.datepicker.dropdown-menu.datepicker-mode-1 tbody button, .datepicker.dropdown-menu.datepicker-mode-2 tbody button {
+    height: 65px;
+}

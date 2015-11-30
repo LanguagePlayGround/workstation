@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/ApplaneDB.js"></script>
+    <script type="text/javascript" src="js/helperCtrl.js"></script>
+
+    <script type="text/javascript">
+
+
+    </script>
+
+</head>
+<body ng-app="applane" ng-controller="AppCtrl">
+<textarea ng-model="userInput" placeholder="User Input" style="height: 100px;width:100%"></textarea>
+<br>
+<br>
+<br>
+<input type="button" value="Query" ng-click="query()"/>
+<input type="button" value="Update" ng-click="update()"/>
+<br>
+<br>
+<br>
+<textarea ng-model="result" placeholder="Result" style="height: 100px;width:100%"></textarea>
+</body>
+</html>

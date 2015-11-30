@@ -1,0 +1,26 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Applane</title>
+    <script>startLoadingTime = new Date();</script>
+    <link rel="icon" href="images/applane_logo.png">
+    <link rel="stylesheet" href="css/applane_combined.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+
+<body ng-app="pl" ng-controller="WorkbenchCtrl">
+
+<main pl-workbench="workbenchOptions"></main>
+<section ng-view></section>
+<div class="pl-pageslide-wrapper"></div>
+<div class="_lm"><div class="app-busy-message">Loading...</div></div>
+
+</body>
+
+<script type="text/javascript" src="js/app-angular.js"></script>
+<script type="text/javascript" src="js/app-helper.js"></script>
+<script type="text/javascript" src="js/app-models.js"></script>
+<script type="text/javascript" src="js/app-component.js"></script>
+<script type="text/javascript" src="js/app-workbench.js"></script>
+<script>endLoadingTime = new Date();</script>
+</html>

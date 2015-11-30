@@ -1,0 +1,40 @@
+                    <ion-view title="">
+    <ion-nav-buttons side="left">
+        <div class="bar-header">
+            <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+            <div class="h1 title">Tasks</div>
+            <div class="buttons">
+                <button ng-click="showPopup()" class="button button-stable">
+                    Save
+                </button>
+            </div>
+        </div>
+
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-refresher
+                pulling-text="Pull to refresh..."
+                on-refresh="doRefresh()">
+        </ion-refresher>
+        <div class="list">
+            <tm-grid></tm-grid>
+        </div>
+        <!--<div class="list">-->
+            <!--<md-button class="md-fab md-primary">+</md-button>-->
+            <!--<md-button class="md-raised md-primary">-->
+                <!--<i class="icon ion-ionic"></i>-->
+                <!--Primary</md-button>-->
+
+            <!--<section layout="row" layout-sm="column" layout-align="center center">-->
+                <!--<md-button ng-href="#/app/" target="_blank" class="md-primary md-hue-1">Primary Hue 1</md-button>-->
+                <!--<md-button class="md-warn md-raised md-hue-2">Warn Hue 2</md-button>-->
+                <!--<md-button class="md-accent">Accent</md-button>-->
+                <!--<md-button class="md-accent md-raised md-hue-1">Accent Hue 1</md-button>-->
+                <!--<div class="label">Themed</div>-->
+            <!--</section>-->
+        <!--</div>-->
+    </ion-content>
+    <div class="list" style="position: absolute; right: 10px; bottom: 10px;">
+        <md-button ng-click="createNewTask()" class="md-fab md-primary">+</md-button>
+     </div>
+</ion-view>

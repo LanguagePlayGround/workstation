@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <link rel="icon" href="images/applane_logo.png">
+    <script type="text/javascript" src="js/lib/jquery1.11.0.js"></script>
+    <script type="text/javascript" src="js/lib/angularv1.3.0-beta.7.js"></script>
+
+
+    <script src="js/q.js"></script>
+    <script type="text/javascript" src="js/Util.js"></script>
+
+    <script type="text/javascript" src="js/ApplaneDB.js"></script>
+    <script type="text/javascript" src="js/LoginCtrl.js"></script>
+    <link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="css/login.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+    <meta charset='utf-8'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <title>Applane</title>
+</head>
+<body class="login login-sales" ng-app="applane" ng-controller="LoginCtrl">
+<h1>Applane Logo</h1>
+
+<div class='container'>
+
+    <h3 class='login-to-account'>Login to your account</h3>
+
+    <div class="login-image" ng-show='processingImage'>
+        <span class="error-message padding-left-ten-pixel" ng-bind='dbBlank'></span>
+        <img src='images/loading.gif' ng-show='processingImage'/>
+    </div>
+
+    <form accept-charset="UTF-8" action="/login" class="clear-both form-horizontal" id="user_new" method="post">
+        <div class='input-form'>
+        </div>
+        <input id="redirect_to" name="redirect_to" type="hidden"/>
+        <fieldset class='custom-align-left'>
+
+            <div class='control-group margin-bottom-eighteen'>
+                <label class="control-label" for="user_username">Username</label>
+
+                <div class='controls'>
+                    <input ng-model="username" class="input-large input-content" id="user_username"
+                           name="user[username]" size="30" type="text" autofocus/>
+                </div>
+            </div>
+
+            <div class='control-group margin-bottom-eighteen'>
+                <label class="control-label" for="user_password">Password</label>
+
+                <div class='controls'>
+                    <input ng-model="password" ng-focus='errorMessage = false'
+                           ng-keyup="$event.keyCode == 13 ? login() : null" autocomplete="off"
+                           class="input-large input-content" id="user_password" name="user[password]" size="30"
+                           type="password" value=""/>
+                </div>
+            </div>
+
+            <div ng-show="showDB" class='control-group margin-bottom-eighteen'>
+                <label class="control-label" for="user_database">Database</label>
+
+                <div class='controls'>
+                    <input ng-model="database" ng-focus='errorMessage = false'
+                           ng-keyup="$event.keyCode == 13 ? login() : null" class="input-large input-content"
+                           id="user_database" name="user[database]" size="30" type="text"/>
+                </div>
+            </div>
+
+            <div class='control-group margin-bottom-eighteen' >
+                <div class='controls'>
+                    <div class="app-position-relative">
+                        <span class="app-float-left">
+                            <input class="btn btn-large btn-primary login-button" type="button" value="Login"
+                               ng-click="login()"  />
+                        </span>
+                        <span class="app-float-left" ng-show="enableGoogleOauth">
+                            <a class="btn btn-large btn-primary g-login" href="/rest/oauth/google"></a>
+                        </span>
+                        <span class="alert-error" ng-show='errorMessage' ng-bind='errorMessage'>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class='control-group'>
+                <div class="controls">
+                    <div ng-show=true>
+                        <a class='controls-linked' href="../forgotpassword.html">Forgot your
+                            password?</a><br>
+                    </div>
+
+                    <div ng-show=true>
+                        <p>&copy;2013 Applane. All Rights Reserved. <br><a class="controls-linked-rights" href="http://www.applane.com/terms-of-use/">Terms of Use</a> | <a class="controls-linked-rights" href="http://www.applane.com/privacy-policy/">Privacy Policy </a></p><br>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+
+</body>
+</html>

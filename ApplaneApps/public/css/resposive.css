@@ -1,0 +1,543 @@
+/************************* media query ***********************************/
+@media only screen and (min-width:601px) {
+    .pl-row-action-col, .pl-responsive-col {
+        display: none;
+    }
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media only screen and (max-width: 601px) {
+    .bread-crumb {
+        display: none;
+    }
+
+    .white-menu {
+        padding: 4px 12px;
+    }
+
+    .white-menu em {
+        background: #fff;
+    }
+
+    .top-search {
+        float: right;
+        background: url('../images/search1.png');
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        margin-top: 2px;
+    }
+
+    .pl-form-wrapper {
+        top: 65px;
+    }
+
+    /************************************************ menu csss  **********************************************/
+    .pl-resize-view, .pl-freeze-area, .pl-nested-freeze-area, .pl-static-col, .fts-search, .pl-header-toolbar {
+        display: none;
+    }
+
+    .pl-sub-fts, .pl-sub-fts .fts-search, .pl-quick-menu, .responsive {
+        display: block;
+    }
+
+    .pl-sub-view {
+        left: 0px !important;
+        top: -5px !important;
+    }
+
+    .pl-row-action-wrapper {
+        width: 86px;
+        margin: 0 auto;
+    }
+
+    .pl-rsp-cond .app-text-align-right {
+        text-align: left;
+    }
+
+    .app-panel {
+        left: 0px;
+    }
+
+    .pl-menu1, .app-panel .pl-top-toolbar, .menu-l1 li span[data-nav-1] {
+        display: block;
+    }
+
+    .app-panel .pl-top-toolbar {
+        box-shadow: 0px -1px 1px 0px #E4E4E4;
+        margin-top: 5px;
+    }
+
+    .app-menu-setting {
+        background: url("../images/applane.png") no-repeat scroll -1568px 13px rgba(0, 0, 0, 0);
+    }
+
+    nav .menu-icon {
+        float: left;
+        cursor: pointer;
+        /*display: block;*/
+        transition: all 0.5s;
+        margin-top: -2px;
+        padding: 5px;
+    }
+
+    #view {
+        top: 56px !important;
+    }
+
+    nav .menu-active {
+        background: gray;
+    }
+
+    nav .menu-icon em {
+        width: 20px;
+        height: 2px;
+        background: #ffffff;
+        cursor: pointer;
+        display: block;
+        transition: all 0.5s ease;
+        clear: both;
+        margin: 3px auto;
+    }
+
+    .slide-menu1, .hide-menu {
+        transition: all 0.2s ease;
+    }
+
+    nav  .pl-top-app-menu-wrapper {
+        left: 100%;
+        opacity: 0;
+        position: fixed;
+        transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        width: 100%;
+    }
+
+    nav.slide-menu1 .pl-top-app-menu-wrapper {
+        left: 0;
+        top: 56px;
+        opacity: 1;
+        display: block;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        /*border: 1px solid #ddd;*/
+    }
+
+    .pl-form-wrapper {
+        /*top: 0px;*/
+    / / apply when hide toolbar
+    }
+
+    nav .menu-l1 ul.pl-second-menu li span.pl-top-menu-arrow {
+        float: right;
+    }
+
+    .menu-l1 {
+        left: 0%;
+        /*height: 0%;*/
+        position: absolute;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    nav .menu-l1 li.pl-top-app-menu {
+        padding: 0px 5px 5px 5px;
+        float: none;
+        width: auto;
+    }
+
+    nav.slide-menu1 .pl-top-app-menu-wrapper .menu-l1 {
+        list-style-type: none;
+        height: 100%;
+        position: relative;
+        background: white;
+        display: block;
+        width: 100%;
+        min-width: 150px;
+        overflow: auto;
+        left: 0;
+    }
+
+    nav ul.slide-menu1 li.pl-selected-menu {
+        color: #fff !important;
+        background: -webkit-linear-gradient(#FFB15C, #FF9F38) !important;
+        background: -ms-linear-gradient(#FF8500, #E67700) !important;
+        background: -o-linear-gradient(#FF8500, #E67700) !important;
+        background: -moz-linear-gradient(#FF8500, #E67700) !important;
+    }
+
+    .pl-top-app-menu {
+        left: 0;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid #ddd;
+        display: block;
+        clear: both;
+        background: white;
+        border-radius: 0;
+        transition: all 0.3s ease;
+    }
+
+    .pl-application-tab {
+        padding: 9px 0 9px 10px;
+        line-height: 20px;
+        border-top-left-radius: 0;
+        float: none;
+        display: inline-block;
+    }
+
+    .pl-application-tab+span.icon-caret-down {
+        line-height: 31px;
+        border-top-right-radius: 0;
+        padding: 5px 5px 2px 0;
+        float: right;
+    }
+
+    .pl-top-app-menu:hover {
+        background: -webkit-linear-gradient(#FF8500, #E67700);
+        background: -ms-linear-gradient(#FF8500, #E67700);
+        background: -o-linear-gradient(#FF8500, #E67700);
+        background: -moz-linear-gradient(#FF8500, #E67700);
+        color: #fff;
+    }
+
+    nav .menu-l1 li ul.pl-second-menu {
+        position: relative;
+        top: 0px;
+        height: 0;
+        overflow-y: auto;
+        padding: 0 !important;
+        float: none;
+        z-index: 99;
+        background: #FFFFFF;
+        left: 0;
+        right: 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 4px 0 #FF8500;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 4px 0 #FF8500;
+        -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 4px 0 #FF8500;
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 4px 0 #FF8500;
+        -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 4px 0 #FF8500;
+        width: 100%;
+        transition: all 0.5s;
+    }
+
+    nav .menu-l1 li ul.pl-second-menu  li span[data-nav-2] {
+        display: block;
+        padding: 0 10px;
+    }
+
+    nav .menu-l1 li ul.slide-menu1 {
+        /*min-height: 200px !important;*/
+        transition: all 0.5s;
+        display: block;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .pl-top-app-menu ul li {
+        display: block;
+        float: none;
+        cursor: pointer;
+        color: #58595b;
+        border-top: 1px solid #ddd;
+        /*padding: 5px 15px;*/
+    }
+
+    .pl-menu-text {
+        float: none;
+        display: block;
+    }
+
+    nav .pl-top-app-menu:hover ul {
+        display: inherit;
+        z-index: 99999;
+    }
+
+    .pl-popup-alert-body {
+        left: 8%;
+        right: 8%;
+        top: 25%;
+        min-width: 220px;
+        overflow: hidden;
+    }
+
+    .pl-popup-background {
+        z-index: 99;
+    }
+
+    /**************************** Third level child menu ***********************************/
+
+    .hide-menu3, .hide-menu4 {
+        display: none;
+        height: 0;
+        transition: all 0.5s;
+    }
+
+    .slide-menu3 {
+        transition: all 0.5s;
+        position: static;
+        margin-top: 10px;
+    }
+
+    nav .pl-second-menu > li > div > ul > li {
+        /*  second level application menu    */
+        display: block;
+        position: relative;
+        background: white;
+        top: 0px;
+        left: 0px;
+        /*width: 100%;*/
+        color: #58595b;
+        float: none;
+        clear: both;
+        padding: 0px;
+        border-bottom: 1px solid #f5f5f5;
+        /*height: 36px;*/
+        border-radius: 4px;
+    }
+
+    nav .pl-second-menu > li > div.slide-menu3 > div > ul > li {
+        display: block;
+    }
+
+    nav .pl-second-menu > li:hover > div > ul {
+        position: relative;
+        border: none;
+        top: 0px;
+    }
+
+    nav .pl-second-menu > li > div > ul {
+        position: relative;
+        top: 0px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        -webkit-box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        -moz-box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        -o-box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        -ms-box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        background: #fff;
+        padding: 0px;
+        left: 0px;
+        width: 100%;
+        display: block;
+
+    }
+
+    nav .pl-second-menu > li:hover > div > ul {
+        /*display: none;*/
+    }
+
+    nav .pl-second-menu > li > div > ul > li > span.pl-sub-menu-left, nav .pl-second-menu > li:hover > div > ul > li > span.pl-sub-menu-left {
+        padding: 0;
+        display: inline-block;
+        float: none;
+        width: 100%;
+    }
+
+    nav .pl-second-menu > li > div > ul > li > span.pl-sub-menu-left span {
+        padding: 5px 10px;
+    }
+
+    nav .pl-second-menu > li:hover > div > ul > li {
+        width: auto;
+        clear: both;
+        padding: 0;
+    }
+
+    nav .pl-second-menu > li > div > ul > li > div > ul {
+        border: none;
+    }
+
+    nav .pl-second-menu > li > div.slide-menu3 > ul.pl-nested-menu > li > div.slide-menu4 > ul {
+        display: block;
+        position: relative;
+        top: -6px !important;
+        left: 0 !important;
+        width: 100%;
+        padding: 0;
+        background: white;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        -webkit-box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        -moz-box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        -o-box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+        -ms-box-shadow: 0px 2px 15px 0px rgba(156, 155, 155, 0.5);
+    }
+
+    nav .pl-second-menu > li > div.slide-menu3 > ul > li {
+        height: auto;
+        padding: 0 5px 0px 5px;
+    }
+
+    nav .pl-second-menu > li > div.slide-menu4 > ul > li {
+        height: auto;
+        padding: 0px 5px 0px 5px;
+    }
+
+    nav .pl-second-menu > li:hover > div > ul > li:hover > div > ul > li {
+        border-radius: 4px;
+    }
+
+    /*************************** end menu css ***************************/
+
+    /********************************************* columns css **********************************************/
+
+
+    .app-header {
+        box-shadow: none;
+        background: rgb(255, 166, 57);
+        z-index: 99;
+        height: 24px;
+        padding: 16px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: auto;
+    }
+
+    .pl-table-header, .applane-logo, .pl-applications-setting, .usermenu {
+        display: none;
+    }
+
+    tr[class*='applane-grid-row'] {
+        border: none;
+    }
+
+    .applane-grid-body td {
+        padding: 0px;
+        border-bottom: none;
+    }
+
+    .applane-grid-body td.pl-row-action-col {
+        display: block;
+        width: 7%;
+        float: left;
+        text-align: center;
+        padding: 2px 0 0 0;
+        border: none;
+    }
+
+    .pl-responsive-col {
+        border: none;
+        display: block;
+        width: 100%;
+        float: right;
+        cursor: pointer;
+        background: #fdfdfd;
+    }
+
+    .pl-responsive-col a {
+        color: #58595b;
+        text-decoration: none;
+        display: block;
+    }
+
+    .child-text, .child-text a, .child-text a:hover {
+        color: rgb(149, 147, 145);
+        font-size: 12px;
+
+    }
+
+    .child-text {
+        margin-top: 5px;
+    }
+
+    .pl-responsive-col a span {
+        display: inline-block;
+    }
+
+    .pl-responsive-col a:active {
+        background: -webkit-linear-gradient(#FF8500, #E67700);
+        background: -ms-linear-gradient(#FF8500, #E67700);
+        background: -o-linear-gradient(#FF8500, #E67700);
+        background: -moz-linear-gradient(#FF8500, #E67700);
+    }
+
+    .pl-chk-wrapper {
+        padding: 1px 5px 0px 6px;
+        display: inline-block;
+    }
+
+    .pl-sub-view .pl-chk-wrapper {
+        padding: 0px 5px 0px 6px;
+    }
+
+    div[id^="innerpopup"] .app-max-height {
+        max-height: 112px;
+        overflow: overlay;
+    }
+
+    .app-pop-up-view {
+        top: 50%;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+    }
+
+    /********************************************* end columns css ******************************************/
+
+}
+
+@media only screen and (min-width:480px) and (max-width:601px) {
+    .applane-grid-body td.pl-row-action-col {
+        width: 6%;
+    }
+
+    .pl-master-col {
+        width: 92%;
+    }
+
+}
+
+@media only screen and (min-width:480px) and (max-width:599px) {
+    .pl-popup-alert-body {
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width:385px) {
+    .applane-grid-body td.pl-row-action-col {
+        width: 7%;
+    }
+
+    .pl-sub-view .pl-responsive-col {
+        border: none;
+        display: block;
+        float: right;
+        cursor: pointer;
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width:250px) {
+    div[id^="innerpopup"] .app-max-height {
+        max-height: 84px;
+    }
+
+    .pl-close-btn {
+        cursor: pointer;
+        margin: 0 2px;
+        padding: 6px 0px;
+    }
+
+    .pl-popup-alert-body {
+        left: 1%;
+        right: 1%;
+        top: 16%;
+        min-width: 220px;
+    }
+
+}

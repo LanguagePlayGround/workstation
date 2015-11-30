@@ -1,0 +1,34 @@
+<!doctype HTML>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Grid</title>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/GridController.js"></script>
+</head>
+<body ng-app="applane" ng-controller="AppCtrl">
+<input type="text" ng-model="startTime"/>
+<input type="text" ng-model="endTime"/>
+<input type="text" ng-model="totalTime"/>
+<input type="button" value="Refresh" ng-click="refresh()">
+
+
+<table border="1">
+    <thead>
+    <th>Counter</th>
+    <th ng-repeat="col in columns">{{col.label}}</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in response.response.data.data">
+        <td>{{$index}}</td>
+        <td app-edit-cell ng-repeat="col in response.response.metadata.columns" ng-bind="col.ui">
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

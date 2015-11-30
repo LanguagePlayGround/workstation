@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+            /* tell the SVG path to be a thin blue line without any area fill */
+        path {
+            stroke-width: 1;
+            fill: none;
+        }
+
+        .axis {
+            shape-rendering: crispEdges;
+        }
+
+        .x.axis line {
+            stroke: black;
+        }
+
+        .x.axis .minor {
+            stroke-opacity: .5;
+        }
+
+        .x.axis path {
+            display: none;
+        }
+
+        .x.axis text {
+            font-size: 14;
+        }
+
+        .y.axis line, .y.axis path {
+            fill: none;
+            stroke: #000;
+        }
+
+        .y.axis text {
+            font-size: 14;
+        }
+
+        .data2 {
+            stroke: blue;
+        }
+
+        .y.axisRight text {
+            fill: blue;
+        }
+
+        .data1 {
+            stroke: red;
+        }
+
+        .y.axisLeft text {
+            fill: red;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="lineGraphCtrl">
+<meta charset="utf-8">
+
+<script src="d3.v2.js"></script>
+<script src="angular.js"></script>
+<script src="controller.js"></script>
+<!--<script src="d3.tip.js"></script>-->
+<script src="../public/js/Util.js"></script>
+
+<div line-graph="graphOptions" style="position:absolute;top:10%;bottom:10%;left:20%;right:20%;"/>
+
+
+</body>

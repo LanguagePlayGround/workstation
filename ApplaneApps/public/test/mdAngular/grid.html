@@ -1,0 +1,35 @@
+<html lang="en" ng-app="autocompleteDemo">
+<head >
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <meta name="viewport" content="initial-scale=1" />
+    <!-- Angular Material Dependencies -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-area.js"></script>
+
+    <script src="js/angular-material.js"></script>
+    <script src="app.js"></script>
+</head>
+<body class="gridListdemoDynamicTiles">
+<div ng-controller="gridListDemoCtrl as vm" flex>
+    <md-grid-list
+            md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="4:3"
+            md-gutter="20px" md-gutter-gt-sm="4px" >
+        <md-grid-tile ng-repeat="tile in vm.tiles"
+                      md-rowspan="{{tile.span.row}}"
+                      md-colspan="{{tile.span.col}}"
+                      md-colspan-sm="1"
+                      ng-class="tile.background" >
+            Hello ji
+            <md-grid-tile-header><h3>{{tile.title}}</h3></md-grid-tile-header>
+            <md-grid-tile-footer><h3>{{tile.title}}</h3></md-grid-tile-footer>
+        </md-grid-tile>
+    </md-grid-list>
+</div>
+</body>
+</html>

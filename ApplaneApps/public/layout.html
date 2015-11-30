@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'RobotDraft', 'helvetica';
+        }
+
+        .parent {
+            height: 100%;
+            background: #A5D9FF;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .top {
+            height: 200px;
+        }
+
+        .left {
+            width: 25%;
+            height: 100%;
+            float: left;
+            background: rgb(1, 95, 163);
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        .right {
+            width: 74.5%;
+            height: 100%;
+            float: right;
+            background: #808080;
+        }
+
+        .list {
+            background: transparent;
+            padding: 0px 10px 0px 100px;
+            position: relative;
+            height: 100px;
+            margin: 20px;
+            color: white;
+        }
+
+        .list p {
+            padding: 0px 10px 0 10px;
+            font-weight: bold;
+        }
+
+        .thumbnail {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url('images/u4.jpg');
+            height: 73px;
+            width: 70px;
+            background-size: 138px;
+            background-repeat: no-repeat;
+            box-shadow: 1px 2px 5px #888;
+            border-radius: 8px;
+            padding: 0;
+            margin: 0;
+            border: 10px solid #9DB3C5;
+
+        }
+
+        .thumbnail.u2 {
+            background: url('images/u3.jpg');
+            background-size: 95px;
+        }
+
+        .thumbnail.u3 {
+            background: url('images/u6.jpg');
+            background-size: 90px;
+        }
+
+        .thumbnail.u4 {
+            background: url('images/u2.jpg');
+            background-size: 110px;
+        }
+
+        .l1 {
+            background: #074F8B;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+
+        .l2 {
+            border: 5px solid #fff;
+            border-top-right-radius: 10px;
+            border-left: none;
+            border-bottom-right-radius: 10px;
+            position: absolute;
+            top: 15px;
+            right: 0;
+            left: 90px;
+        }
+        .c1{
+            margin: 20px;
+            color: #ffffff;
+            text-align: left;
+            font-size: 16px;
+        }
+        .label{
+            display: block;
+            text-align: left;
+            margin: 0;
+            padding: 0 ;
+
+        }
+        .label label{
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        .flex{
+            display: inline-flex;
+        }
+        .flex-1{
+            flex:1;
+        }
+        .selected{
+            color: rgb(1, 95, 163);
+            background: #ffffff;
+        }
+        .right .thumbnail{
+            height: 50px;
+            width: 50px;
+            background-size: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="left">
+        <div class="l1">
+            Sales Representation
+        </div>
+        <div>
+            <div class="c1">
+                <label class="label"><input type='checkbox' checked value='' /><label>Current Year</label></label>
+                <label class="label"><input type='checkbox' value='' /><label>Last Year</label></label>
+            </div>
+            <hr>
+            <div class="list">
+                <div class="thumbnail u4"></div>
+                <div class="l2">
+                    <p>Bill Gates</p>
+
+                    <p>Gurgoan</p>
+
+                    <p>Session : 2013-14</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="thumbnail"></div>
+                <div class="l2  selected">
+                    <p>Shalini Singh</p>
+
+                    <p>Gurgoan</p>
+
+                    <p>Session : 2013-14</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="thumbnail u2"></div>
+                <div class="l2">
+                    <p>Breet Lee</p>
+
+                    <p>Sonipat</p>
+
+                    <p>Session : 2013-14</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="thumbnail"></div>
+                <div class="l2">
+                    <p>Maria Navratilova</p>
+
+                    <p>Hisar</p>
+
+                    <p>Session : 2013-14</p>
+                </div>
+            </div>
+            <!--<div class="list">-->
+                <!--<div class="thumbnail u2"></div>-->
+                <!--<div class="l2">-->
+                    <!--<p>Maria Navratilova</p>-->
+
+                    <!--<p>DOB : 03/01/1989</p>-->
+
+                    <!--<p>Address : Haryana</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="list">-->
+                <!--<div class="thumbnail u3"></div>-->
+                <!--<div class="l2">-->
+                    <!--<p>Maria Navratilova</p>-->
+
+                    <!--<p>DOB : 03/01/1989</p>-->
+
+                    <!--<p>Address : Haryana</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="l1">
+            Sales Representation Statistics
+        </div>
+        <div class="flex">
+            <div>
+                <div>
+                    <div class="list">
+                        <div class="thumbnail"></div>
+                        <div >
+                            <p>Name: Shalini Singh</p>
+
+                            <p>Region : Gurgoan</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <div class="flex-1"></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
